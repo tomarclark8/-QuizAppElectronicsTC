@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 import androidx.activity.EdgeToEdge;
@@ -90,11 +91,14 @@ public class MainQuestions extends AppCompatActivity {
 
 
                 //fixed limit
+
                 if(qindex <= 8 && anindex <= 9) {
                     if (qlist.get(anindex).equalsIgnoreCase("true")) {
                         tscore++;
+                        Toast.makeText(MainQuestions.this, "Correct!", Toast.LENGTH_SHORT).show();
                     } else {
                         fscore++;
+                        Toast.makeText(MainQuestions.this, "Wrong!", Toast.LENGTH_SHORT).show();
                     }
                     anindex += 2;
                     qindex += 2;
@@ -121,8 +125,10 @@ public class MainQuestions extends AppCompatActivity {
                 if(qindex <= 8 && anindex <= 9) {
                     if (qlist.get(anindex).equalsIgnoreCase("false")) {
                         tscore++;
+                        Toast.makeText(MainQuestions.this, "Correct!", Toast.LENGTH_SHORT).show();
                     } else {
                         fscore++;
+                        Toast.makeText(MainQuestions.this, "Wrong!", Toast.LENGTH_SHORT).show();
                     }
                     anindex += 2;
                     qindex += 2;
