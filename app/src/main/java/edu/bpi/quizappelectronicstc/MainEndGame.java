@@ -1,5 +1,6 @@
 package edu.bpi.quizappelectronicstc;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -13,8 +14,9 @@ public class MainEndGame extends AppCompatActivity {
 
     TextView Score1;
     TextView Score2;
-    TextView woL;
+    TextView Scorewl;
     Button Again;
+
 
 
     @Override
@@ -25,32 +27,12 @@ public class MainEndGame extends AppCompatActivity {
 
         Score1 = (TextView) findViewById(R.id.Score1);
         Score2 = (TextView) findViewById(R.id.Score2);
-        woL = (TextView) findViewById(R.id.winorlose);
+        Scorewl = (TextView) findViewById(R.id.scorewl);
         Again = (Button) findViewById(R.id.Again);
 
         Score1.setText(MainQuestions.true_score());
         Score2.setText(MainQuestions.false_score());
-        // check if score 1 >=3, check if score 2 >=3
-
-        if(Score1.equals("3")){
-            woL.setText("You WIN!!");
-        }
-        if(Score1.equals("4")){
-            woL.setText("You WIN!!");
-        }
-        if(Score1.equals("5")){
-            woL.setText("You WIN!!");
-        }
-        //losing condition-----
-        if(Score2.equals("3")){
-            woL.setText("You LOSE!!");
-        }
-        if(Score2.equals("4")){
-            woL.setText("You LOSE!!");
-        }
-        if(Score2.equals("5")){
-            woL.setText("You LOSE!!");
-        }
+        Scorewl.setText(MainQuestions.winner_score());
 
 
         Again.setOnClickListener(new View.OnClickListener() {

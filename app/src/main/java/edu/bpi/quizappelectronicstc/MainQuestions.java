@@ -42,7 +42,17 @@ public class MainQuestions extends AppCompatActivity {
    }
 
    //say who is the winnner
+    public static String winner_score(){
+        String winner="";
+        if(fscore > tscore && fscore == 5 ){
+            winner = "Your the LOSER!!";
 
+        }
+        if(tscore > fscore && tscore == 5 ){
+            winner = "Your the WINNER!!";
+        }
+        return winner;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,21 +85,27 @@ public class MainQuestions extends AppCompatActivity {
 
 
                 //switch to finishing game
-                if(qlist.get(anindex).equalsIgnoreCase("true")) {
-                    tscore++;
-                } else {
-                    fscore++;
-                }
-                anindex+= 2;
-                qindex+= 2;
-                qnum++;
-                QuestioN.setText("Question #"+ qnum);
-                Questions.setText(qlist.get(qindex));
 
-                if(qnum == 5){
-                    //intent to end of the game
-                    Intent intent = new Intent(MainQuestions.this, MainEndGame.class);
-                    startActivity(intent);
+                //statement for last question
+
+
+                //fixed limit
+                if(qindex <= 8 && anindex <= 9) {
+                    if (qlist.get(anindex).equalsIgnoreCase("true")) {
+                        tscore++;
+                    } else {
+                        fscore++;
+                    }
+                    anindex += 2;
+                    qindex += 2;
+                    qnum++;
+                    if (qnum == 6){
+                        Intent intent = new Intent(MainQuestions.this, MainEndGame.class);
+                        startActivity(intent);
+                    } else {
+                        QuestioN.setText("Question #" + qnum);
+                        Questions.setText(qlist.get(qindex));
+                    }
                 }
 
             }
@@ -102,22 +118,25 @@ public class MainQuestions extends AppCompatActivity {
                 //playing the game
 
                 //switch to finishing game
-                if(qlist.get(anindex).equalsIgnoreCase("false")) {
-                    tscore++;
-                } else {
-                    fscore++;
+                if(qindex <= 8 && anindex <= 9) {
+                    if (qlist.get(anindex).equalsIgnoreCase("false")) {
+                        tscore++;
+                    } else {
+                        fscore++;
+                    }
+                    anindex += 2;
+                    qindex += 2;
+                    qnum++;
+                    if (qnum == 6){
+                        Intent intent = new Intent(MainQuestions.this, MainEndGame.class);
+                        startActivity(intent);
+                    } else {
+                        QuestioN.setText("Question #" + qnum);
+                        Questions.setText(qlist.get(qindex));
+                    }
                 }
-                anindex+= 2;
-                qindex+= 2;
-                qnum++;
-                QuestioN.setText("Question #"+ qnum);
-                Questions.setText(qlist.get(qindex));
 
-                if(qnum == 5){
-                    //intent to end of the game
-                    Intent intent = new Intent(MainQuestions.this, MainEndGame.class);
-                    startActivity(intent);
-                }
+
 
             }
         });

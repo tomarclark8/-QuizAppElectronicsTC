@@ -9,13 +9,21 @@
     tools:context=".MainEndGame">
 
     <TextView
+        android:id="@+id/scorewl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="You havent won yet?"
+        android:textSize="50dp"
+        android:translationY="400dp" />
+
+    <TextView
         android:id="@+id/EndTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="END OF THE GAME!!!"
         android:textAlignment="center"
         android:textSize="55sp"
-        android:translationY="50sp"/>
+        android:translationY="-50sp" />
 
     <TextView
         android:id="@+id/Score1"
@@ -23,7 +31,7 @@
         android:layout_height="wrap_content"
         android:text="Correct:"
         android:textSize="55sp"
-        android:translationY="50sp"/>
+        android:translationY="-50sp" />
 
     <TextView
         android:id="@+id/Score2"
@@ -31,15 +39,8 @@
         android:layout_height="wrap_content"
         android:text="False:"
         android:textSize="55sp"
-        android:translationY="50sp"/>
+        android:translationY="-50sp" />
 
-    <TextView
-        android:id="@+id/winorlose"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="--->"
-        android:textSize="55sp"
-        android:translationY="100dp"/>
 
     <Button
         android:id="@+id/Again"
