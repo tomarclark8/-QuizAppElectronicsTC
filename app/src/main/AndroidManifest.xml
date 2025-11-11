@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.QuizAppElectronicsTC">
         <activity
+            android:name=".DifficultyLevel"
+            android:exported="false" />
+        <activity
             android:name=".MainEndGame"
             android:exported="false" />
         <activity
