@@ -1,7 +1,5 @@
 package edu.bpi.quizappelectronicstc;
 
-
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -18,7 +16,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 
-public class MainQuestions extends AppCompatActivity {
+public class LvlOne extends AppCompatActivity {
 
     private int qindex = 0;
     private int qnum=1;
@@ -26,8 +24,8 @@ public class MainQuestions extends AppCompatActivity {
      static int fscore=0;
     private int anindex=1;
 
-    TextView QuestioN;
-    TextView Questions;
+    TextView qnumindex;
+    TextView questionsindex;
     Button True;
     Button False;
 
@@ -59,11 +57,11 @@ public class MainQuestions extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_main_questions);
+        setContentView(R.layout.activity_level_one);
 
 
-        QuestioN = (TextView) findViewById(R.id.QuestioN);
-        Questions = (TextView) findViewById(R.id.Questions);
+        qnumindex = (TextView) findViewById(R.id.qnumindex);
+        questionsindex = (TextView) findViewById(R.id.questionsindex);
         True = (Button) findViewById(R.id.True);
         False = (Button) findViewById(R.id.False);
 
@@ -75,7 +73,7 @@ public class MainQuestions extends AppCompatActivity {
         ArrayList<String> qlist  = new ArrayList<>(Arrays.asList("Is a red-red-blue-gold resistor nominal value greater than 45M-ohms?","false","This the schematic symbol of a bulb?", "true","Conventional Current flows from Negative(-) to Positive(+)?","false","Ohm's Law is represented by the equation V=(I)(R)?","true","Make up something here lol","false"));
 
         //set first question
-        Questions.setText(qlist.get(qindex));
+        questionsindex.setText(qlist.get(qindex));
 
 
 
@@ -95,20 +93,20 @@ public class MainQuestions extends AppCompatActivity {
                 if(qindex <= 8 && anindex <= 9) {
                     if (qlist.get(anindex).equalsIgnoreCase("true")) {
                         tscore++;
-                        Toast.makeText(MainQuestions.this, "Correct!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LvlOne.this, "Correct!", Toast.LENGTH_SHORT).show();
                     } else {
                         fscore++;
-                        Toast.makeText(MainQuestions.this, "Wrong!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LvlOne.this, "Wrong!", Toast.LENGTH_SHORT).show();
                     }
                     anindex += 2;
                     qindex += 2;
                     qnum++;
                     if (qnum == 6){
-                        Intent intent = new Intent(MainQuestions.this, MainEndGame.class);
+                        Intent intent = new Intent(LvlOne.this, EndGame.class);
                         startActivity(intent);
                     } else {
-                        QuestioN.setText("Question #" + qnum);
-                        Questions.setText(qlist.get(qindex));
+                        qnumindex.setText("Question #" + qnum);
+                        questionsindex.setText(qlist.get(qindex));
                     }
                 }
 
@@ -125,20 +123,20 @@ public class MainQuestions extends AppCompatActivity {
                 if(qindex <= 8 && anindex <= 9) {
                     if (qlist.get(anindex).equalsIgnoreCase("false")) {
                         tscore++;
-                        Toast.makeText(MainQuestions.this, "Correct!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LvlOne.this, "Correct!", Toast.LENGTH_SHORT).show();
                     } else {
                         fscore++;
-                        Toast.makeText(MainQuestions.this, "Wrong!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LvlOne.this, "Wrong!", Toast.LENGTH_SHORT).show();
                     }
                     anindex += 2;
                     qindex += 2;
                     qnum++;
                     if (qnum == 6){
-                        Intent intent = new Intent(MainQuestions.this, MainEndGame.class);
+                        Intent intent = new Intent(LvlOne.this, EndGame.class);
                         startActivity(intent);
                     } else {
-                        QuestioN.setText("Question #" + qnum);
-                        Questions.setText(qlist.get(qindex));
+                        qnumindex.setText("Question #" + qnum);
+                        questionsindex.setText(qlist.get(qindex));
                     }
                 }
 

@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".MainQuestions">
+    tools:context=".LvlTwo">
 
 
     <TextView
@@ -21,23 +20,23 @@
 
 
     <TextView
-        android:id="@+id/Questions"
+        android:id="@+id/qnumindex1"
+        android:text="Question #1:"
+        android:textSize="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:translationX="20dp"
+        android:translationY="74dp" />
+
+
+    <TextView
+        android:id="@+id/questionsindex1"
         android:layout_width="379dp"
         android:layout_height="wrap_content"
         android:text="Question here...."
         android:textSize="30dp"
         android:translationX="20dp"
         android:translationY="74dp" />
-
-
-    <Button
-        android:id="@+id/True"
-        android:layout_width="match_parent"
-        android:layout_height="143dp"
-        android:text="True"
-        android:textSize="40dp"
-        android:translationX="0dp"
-        android:translationY="360dp" />
 
 
     <Button
@@ -48,5 +47,9 @@
         android:textSize="40dp"
         android:translationX="0dp"
         android:translationY="380dp" />
+
+
+
+
 
 </LinearLayout>

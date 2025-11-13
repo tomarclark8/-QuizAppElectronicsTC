@@ -10,12 +10,9 @@ import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 
-public class MainActivity extends AppCompatActivity {
+public class StartGame extends AppCompatActivity {
     TextView Title;
     Button Start;
 
@@ -33,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v){
 
                 //on click switch to mainquestions class
-                Intent intent = new Intent(MainActivity.this, MainQuestions.class);
+                Intent intent = new Intent(StartGame.this, LvlOne.class);
                 startActivity(intent);
 
 

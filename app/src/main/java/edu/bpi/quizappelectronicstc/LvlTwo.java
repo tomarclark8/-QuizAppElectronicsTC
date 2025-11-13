@@ -1,21 +1,17 @@
 package edu.bpi.quizappelectronicstc;
 
 import android.os.Bundle;
-import android.os.CountDownTimer;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
-public class DifficultyLevel extends AppCompatActivity {
+public class LvlTwo extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_difficulty_level);
+        setContentView(R.layout.activity_level_two);
 
         //intents between start game, and end of the game for a few seconds
         //implement extra feature(gamble or bookmark using skip button
