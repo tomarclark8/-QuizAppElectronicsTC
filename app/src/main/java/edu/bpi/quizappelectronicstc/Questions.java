@@ -1,51 +1,64 @@
 package edu.bpi.quizappelectronicstc;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 
 //implement old questions
 public class Questions {
-
-    public Questions(String q, String a){
-        String[] questionsone = new String[]{
+String[] questionsone;
+String[] questionstwo;
+String[] questionsthree;
+    public Questions(String q, boolean a){
+        this.questionsone = new String[]{
                 "Is a red-red-blue-gold resistor nominal value greater than 45M-ohms?",
                 "This the schematic symbol of a bulb?",
                 "Conventional Current flows from Negative(-) to Positive(+)?",
                 "Ohm's Law is represented by the equation V=(I)(R)?",
                 "Make up something here lol"};
-        String[] questionstwo = new String[]{};
-        String[] questionsthree = new String[]{};
-
-
-        ArrayList<String> answersone = new ArrayList<>(5);
-        for(int i=0; i < questionsone.length + 1; i++){
-            if(i % 2 == 0 || i == 0){
-                answersone.add("true");
-            }
-            if(i % 2 > 0){
-                answersone.add("false");
-            }
-        }
-
-        //
-        ArrayList<String> answerstwo = new ArrayList<>(3);
-        for(int i=0; i < questionstwo.length + 1; i++){
-            if(i % 2 == 0 || i == 0){
-                answersone.add("true");
-            }
-            if(i % 2 > 0){
-                answersone.add("false");
-            }
-        }
-
-        //
-        ArrayList<String> answersthree = new ArrayList<>(1);
-        answersthree.add("true");
+        this.questionstwo = new String[3];
+        this.questionsthree = new String[1];
+        ArrayList<String> answers  = new ArrayList<String>();
 
 
     }
+        //Questions
+        public String getlvlOneQuestions(int i){
+            if(i > questionsone.length-1){
+                return questionsone[3];
+            }
+            if(i < 0){
+                return questionsone[0];
+            }
+            return questionsone[i];
+        }
+        public String getlvlTwoQuestions(int i){
+            if(i > questionstwo.length-1){
+                return questionstwo[3];
+            }
+            if(i < 0){
+                return questionstwo[0];
+            }
+            return questionstwo[i];
+        }
+        public String getlvlThreeQuestions(int i){
+            if(i != questionsthree.length-1){
+                return questionsthree[0];
+            }
+            return questionsthree[i];
+        }
+        //Answers
+        public String getlvlOneAnswer(){
+        return "";
+        }
+        public String getlvlTwoAnswer(){
+            return "";
+        }
+        public String getlvlThreeAnswer(){
+            return "";
+        }
+}
 
 
     //,"false",, "true",,"false",,"true",,"false"));
 
-}

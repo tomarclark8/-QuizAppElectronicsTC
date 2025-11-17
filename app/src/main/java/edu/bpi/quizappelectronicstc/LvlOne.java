@@ -75,8 +75,7 @@ public class LvlOne extends AppCompatActivity {
         //set first question
         questionsindex.setText(qlist.get(qindex));
 
-
-
+        //Buttons
         True.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -112,7 +111,6 @@ public class LvlOne extends AppCompatActivity {
 
             }
         });
-
 
         False.setOnClickListener(new View.OnClickListener() {
             @Override
