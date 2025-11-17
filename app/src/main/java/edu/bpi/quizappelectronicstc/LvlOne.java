@@ -20,12 +20,12 @@ public class LvlOne extends AppCompatActivity {
 
     private int qindex = 0;
     private int qnum=1;
-     static int tscore=0;
-     static int fscore=0;
+    static int tscore=0;
+    static int fscore=0;
     private int anindex=1;
 
-    TextView qnumindex;
-    TextView questionsindex;
+    TextView qnumindex1;
+    TextView questionsindex1;
     Button True;
     Button False;
 
@@ -40,7 +40,7 @@ public class LvlOne extends AppCompatActivity {
         return score;
    }
 
-   //say who is the winnner
+    //say who is the winnner
     public static String winner_score(){
         String winner="";
         if(fscore > tscore && fscore == 5 ){
@@ -60,8 +60,8 @@ public class LvlOne extends AppCompatActivity {
         setContentView(R.layout.activity_level_one);
 
 
-        qnumindex = (TextView) findViewById(R.id.qnumindex);
-        questionsindex = (TextView) findViewById(R.id.questionsindex);
+        qnumindex1 = (TextView) findViewById(R.id.qnumindex1);
+        questionsindex1 = (TextView) findViewById(R.id.questionsindex1);
         True = (Button) findViewById(R.id.True);
         False = (Button) findViewById(R.id.False);
 
@@ -73,7 +73,7 @@ public class LvlOne extends AppCompatActivity {
         ArrayList<String> qlist  = new ArrayList<>(Arrays.asList("Is a red-red-blue-gold resistor nominal value greater than 45M-ohms?","false","This the schematic symbol of a bulb?", "true","Conventional Current flows from Negative(-) to Positive(+)?","false","Ohm's Law is represented by the equation V=(I)(R)?","true","Make up something here lol","false"));
 
         //set first question
-        questionsindex.setText(qlist.get(qindex));
+        questionsindex1.setText(qlist.get(qindex));
 
         //Buttons
         True.setOnClickListener(new View.OnClickListener() {
@@ -104,8 +104,8 @@ public class LvlOne extends AppCompatActivity {
                         Intent intent = new Intent(LvlOne.this, EndGame.class);
                         startActivity(intent);
                     } else {
-                        qnumindex.setText("Question #" + qnum);
-                        questionsindex.setText(qlist.get(qindex));
+                        qnumindex1.setText("Question #" + qnum);
+                        questionsindex1.setText(qlist.get(qindex));
                     }
                 }
 
@@ -133,8 +133,8 @@ public class LvlOne extends AppCompatActivity {
                         Intent intent = new Intent(LvlOne.this, EndGame.class);
                         startActivity(intent);
                     } else {
-                        qnumindex.setText("Question #" + qnum);
-                        questionsindex.setText(qlist.get(qindex));
+                        qnumindex1.setText("Question #" + qnum);
+                        questionsindex1.setText(qlist.get(qindex));
                     }
                 }
 

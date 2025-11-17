@@ -10,7 +10,7 @@
     tools:context=".LvlThree">
 
     <TextView
-        android:id="@+id/qnumindex1"
+        android:id="@+id/qnumindex3"
         android:text="Question #1:"
         android:textSize="30dp"
         android:layout_width="wrap_content"
@@ -20,7 +20,7 @@
 
 
     <TextView
-        android:id="@+id/questionsindex1"
+        android:id="@+id/questionsindex3"
         android:layout_width="379dp"
         android:layout_height="wrap_content"
         android:text="Question here...."

@@ -10,7 +10,7 @@
 
 
     <TextView
-        android:id="@+id/QuestioN"
+        android:id="@+id/qnumindex2"
         android:text="Question #1:"
         android:textSize="30dp"
         android:layout_width="wrap_content"
@@ -20,23 +20,23 @@
 
 
     <TextView
-        android:id="@+id/qnumindex1"
-        android:text="Question #1:"
-        android:textSize="30dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:translationX="20dp"
-        android:translationY="74dp" />
-
-
-    <TextView
-        android:id="@+id/questionsindex1"
+        android:id="@+id/questionsindex2"
         android:layout_width="379dp"
         android:layout_height="wrap_content"
         android:text="Question here...."
         android:textSize="30dp"
         android:translationX="20dp"
         android:translationY="74dp" />
+
+
+    <Button
+        android:id="@+id/True"
+        android:layout_width="match_parent"
+        android:layout_height="143dp"
+        android:text="True"
+        android:textSize="40dp"
+        android:translationX="0dp"
+        android:translationY="360dp" />
 
 
     <Button
@@ -47,9 +47,5 @@
         android:textSize="40dp"
         android:translationX="0dp"
         android:translationY="380dp" />
-
-
-
-
 
 </LinearLayout>
