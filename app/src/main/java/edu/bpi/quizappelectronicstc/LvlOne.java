@@ -33,6 +33,12 @@ public class LvlOne extends AppCompatActivity {
         True = (Button) findViewById(R.id.True);
         False = (Button) findViewById(R.id.False);
 
+
+        //intent for score to check if min/ max correct
+
+
+
+
         //Buttons
         True.setOnClickListener(new View.OnClickListener() {
             @Override
