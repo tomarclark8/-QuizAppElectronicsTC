@@ -1,6 +1,8 @@
 package edu.bpi.quizappelectronicstc;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -20,11 +22,29 @@ public class LvlTwo extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_level_two);
 
-        //intents between start game, and end of the game for a few seconds
-        //implement extra feature(gamble or bookmark using skip button
-        //difficulty based on score[meet minimum score to move onto the next section])
-        //if intent into difficlevl class true,
-        //start timer and once timer meets 0seconds(index-1) or 2seconds(index+1)
-        //intent again back to questions class.
+        qnumindex2 = (TextView) findViewById(R.id.qnumindex2);
+        questionsindex2 = (TextView) findViewById(R.id.questionsindex2);
+        True = (Button) findViewById(R.id.True);
+        False = (Button) findViewById(R.id.False);
+
+        //Buttons
+        True.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //playing the game
+                //
+                Intent intent = new Intent(LvlTwo.this, TransitionScreen.class);
+                startActivity(intent);
+            }
+        });
+
+        False.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //playing the game
+                Intent intent = new Intent(LvlTwo.this, TransitionScreen.class);
+                startActivity(intent);
+            }
+        });
     }
 }

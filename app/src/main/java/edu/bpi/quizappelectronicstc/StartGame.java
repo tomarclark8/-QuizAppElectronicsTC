@@ -30,8 +30,9 @@ public class StartGame extends AppCompatActivity {
             public void onClick(View v){
 
                 //on click switch to mainquestions class
-                Intent intent = new Intent(StartGame.this, LvlOne.class);
-                startActivity(intent);
+                Intent intentstart = new Intent(StartGame.this, LvlOne.class);
+                intentstart.putExtra("lvlIndictator", 1);
+                startActivity(intentstart);
 
 
             }

@@ -38,7 +38,8 @@ public class LvlOne extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //playing the game
-                Intent intent = new Intent(LvlOne.this, LvlTwo.class);
+                //
+                Intent intent = new Intent(LvlOne.this, TransitionScreen.class);
                 startActivity(intent);
             }
         });
@@ -47,7 +48,7 @@ public class LvlOne extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //playing the game
-                Intent intent = new Intent(LvlOne.this, LvlTwo.class);
+                Intent intent = new Intent(LvlOne.this, TransitionScreen.class);
                 startActivity(intent);
             }
         });

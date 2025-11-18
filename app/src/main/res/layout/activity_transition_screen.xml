@@ -10,12 +10,25 @@
     tools:context=".TransitionScreen">
 
     <TextView
+        android:id="@+id/Level"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Level #__"
         android:textSize="98sp"
         android:textColor="#FB2343"
+        android:translationY="220sp"
+
+        />
+
+    <Button
+        android:id="@+id/nextLvl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Begin"
+        android:textSize="98sp"
+        android:textColor="#F0A532"
         android:translationY="280sp"
+        android:translationX="50sp"
         />
 
 </LinearLayout>
