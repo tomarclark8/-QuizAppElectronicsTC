@@ -29,19 +29,7 @@ public class EndGame extends AppCompatActivity {
         Scorewl = (TextView) findViewById(R.id.scorewl);
         Again = (Button) findViewById(R.id.Again);
 
-        Score1.setText(LvlOne.true_score());
-        Score2.setText(LvlOne.false_score());
-        Scorewl.setText(LvlOne.winner_score());
 
-
-        Again.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //on click switch to main questions class
-                Intent intent = new Intent(EndGame.this, StartGame.class);
-                startActivity(intent);
-            }
-        });
 
     }
 }

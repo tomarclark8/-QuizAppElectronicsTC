@@ -18,8 +18,9 @@ String[] questionsthree;
                 "Make up something here lol"};
         this.questionstwo = new String[3];
         this.questionsthree = new String[1];
-        ArrayList<String> answers  = new ArrayList<String>();
-
+        ArrayList<String> answerone = new ArrayList<String>();
+        ArrayList<String> answertwo = new ArrayList<String>();
+        ArrayList<String> answerthree = new ArrayList<String>();
 
 
     }
