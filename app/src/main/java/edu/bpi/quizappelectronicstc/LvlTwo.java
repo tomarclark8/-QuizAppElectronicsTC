@@ -16,6 +16,8 @@ public class LvlTwo extends AppCompatActivity {
     Button True;
     Button False;
 
+private int lvlIndicator;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +29,12 @@ public class LvlTwo extends AppCompatActivity {
         True = (Button) findViewById(R.id.True);
         False = (Button) findViewById(R.id.False);
 
+        //intent for score to check if min/ max correct
+        Intent receivedIntent = getIntent();
+        lvlIndicator = receivedIntent.getIntExtra("lvlIndicator", 2);
+
+
+
         //Buttons
         True.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -34,6 +42,7 @@ public class LvlTwo extends AppCompatActivity {
                 //playing the game
                 //
                 Intent intent = new Intent(LvlTwo.this, TransitionScreen.class);
+                intent.putExtra("lvlIndicator", lvlIndicator);
                 startActivity(intent);
             }
         });
@@ -43,6 +52,7 @@ public class LvlTwo extends AppCompatActivity {
             public void onClick(View v) {
                 //playing the game
                 Intent intent = new Intent(LvlTwo.this, TransitionScreen.class);
+                intent.putExtra("lvlIndicator", lvlIndicator);
                 startActivity(intent);
             }
         });

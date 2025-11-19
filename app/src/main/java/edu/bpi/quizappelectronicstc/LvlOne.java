@@ -21,6 +21,7 @@ public class LvlOne extends AppCompatActivity {
     TextView questionsindex1;
     Button True;
     Button False;
+    private int lvlIndicator;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +36,8 @@ public class LvlOne extends AppCompatActivity {
 
 
         //intent for score to check if min/ max correct
-
+        Intent receivedIntent = getIntent();
+        lvlIndicator = receivedIntent.getIntExtra("lvlIndicator", 2);
 
 
 
@@ -46,6 +48,7 @@ public class LvlOne extends AppCompatActivity {
                 //playing the game
                 //
                 Intent intent = new Intent(LvlOne.this, TransitionScreen.class);
+                intent.putExtra("lvlIndicator", lvlIndicator);
                 startActivity(intent);
             }
         });
@@ -55,6 +58,7 @@ public class LvlOne extends AppCompatActivity {
             public void onClick(View v) {
                 //playing the game
                 Intent intent = new Intent(LvlOne.this, TransitionScreen.class);
+                intent.putExtra("lvlIndicator", lvlIndicator);
                 startActivity(intent);
             }
         });

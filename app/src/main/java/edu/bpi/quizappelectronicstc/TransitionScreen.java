@@ -22,51 +22,33 @@ TextView Level;
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_transition_screen);
-
-        //intent level indicator from classes
-        Intent intent = getIntent();
-        int lvlIndicator = intent.getIntExtra("lvlIndicator", 0);
-
-        //connect xml and class
+//connect xml and class
         nextLvl = (Button) findViewById(R.id.nextLvl);
         Level = (TextView) findViewById(R.id.Level);
+        //intent level indicator from classes
+        Intent intent = getIntent();
+        int lvlIndicator = intent.getIntExtra("lvlIndicator", 1);
 
         nextLvl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v){
-                //for intent to lvlone.class
-                if(lvlIndicator == 0) {
-                    Intent intent = getIntent();
-                    int lvlIndicator = intent.getIntExtra("lvlIndicator", 1);
+                Intent intenttrans = new Intent();
 
-                    if(lvlIndicator == 1){
-                        Intent intenttrans = new Intent(TransitionScreen.this, LvlOne.class);
-                        startActivity(intenttrans);
-                    }
-
-                }
-                //for intent to lvltwo.class
                 if(lvlIndicator == 1) {
-                    Intent intent = getIntent();
-                    int lvlIndicator = intent.getIntExtra("lvlIndicator", 2);
-
-                    if(lvlIndicator == 2) {
-                        Intent intenttrans = new Intent(TransitionScreen.this, LvlTwo.class);
-                        startActivity(intenttrans);
-                    }
+                    intenttrans = new Intent(TransitionScreen.this, LvlOne.class);
+                    intenttrans.putExtra("lvlIndicator", 2);
+                    startActivity(intenttrans);
                 }
-                //for intent to lvlthree.class
-                if(lvlIndicator == 2) {
-                    Intent intent = getIntent();
-                    int lvlIndicator = intent.getIntExtra("lvlIndicator", 3);
-
-                    if(lvlIndicator == 3){
-                        Intent intenttrans = new Intent(TransitionScreen.this, LvlThree.class);
-                        startActivity(intenttrans);
-                    }
-
+                else if(lvlIndicator == 2) {
+                    intenttrans = new Intent(TransitionScreen.this, LvlTwo.class);
+                    intenttrans.putExtra("lvlIndicator", 3);
+                    startActivity(intenttrans);
                 }
-
+                else if(lvlIndicator == 3){
+                    intenttrans = new Intent(TransitionScreen.this, LvlThree.class);
+                    // No need to pass lvlIndicator if it's the last level
+                    startActivity(intenttrans);
+                }
             }
         });
     }
