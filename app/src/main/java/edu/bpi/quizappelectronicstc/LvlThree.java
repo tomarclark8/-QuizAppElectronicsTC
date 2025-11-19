@@ -15,7 +15,7 @@ import androidx.core.view.WindowInsetsCompat;
 public class LvlThree extends AppCompatActivity {
 
     TextView qnumindex3;
-    TextView questionsindex3;
+    TextView questions3;
     Button True;
     Button False;
 
@@ -28,7 +28,7 @@ public class LvlThree extends AppCompatActivity {
         setContentView(R.layout.activity_level_three);
 
         qnumindex3 = (TextView) findViewById(R.id.qnumindex3);
-        questionsindex3 = (TextView) findViewById(R.id.questionsindex3);
+        questions3 = (TextView) findViewById(R.id.questions3);
         True = (Button) findViewById(R.id.True);
         False = (Button) findViewById(R.id.False);
 
@@ -44,7 +44,7 @@ public class LvlThree extends AppCompatActivity {
             public void onClick(View v) {
                 //playing the game
                 //
-                Intent intent = new Intent(LvlThree.this, TransitionScreen.class);
+                Intent intent = new Intent(LvlThree.this, EndGame.class);
                 intent.putExtra("lvlIndicator", lvlIndicator);
                 startActivity(intent);
             }
@@ -54,7 +54,7 @@ public class LvlThree extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //playing the game
-                Intent intent = new Intent(LvlThree.this, TransitionScreen.class);
+                Intent intent = new Intent(LvlThree.this, EndGame.class);
                 intent.putExtra("lvlIndicator", lvlIndicator);
                 startActivity(intent);
             }

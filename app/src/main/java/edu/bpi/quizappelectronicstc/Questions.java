@@ -9,7 +9,10 @@ public class Questions {
 String[] questionsone;
 String[] questionstwo;
 String[] questionsthree;
-    public Questions(String q, boolean a){
+    ArrayList<Boolean> answerone;
+    ArrayList<Boolean> answertwo;
+    ArrayList<Boolean> answerthree;
+    public Questions(){
         this.questionsone = new String[]{
                 "Is a red-red-blue-gold resistor nominal value greater than 45M-ohms?",
                 "This the schematic symbol of a bulb?",
@@ -18,46 +21,44 @@ String[] questionsthree;
                 "Make up something here lol"};
         this.questionstwo = new String[3];
         this.questionsthree = new String[1];
-        ArrayList<String> answerone = new ArrayList<String>();
-        ArrayList<String> answertwo = new ArrayList<String>();
-        ArrayList<String> answerthree = new ArrayList<String>();
+        //answers one
+        this.answerone = new ArrayList<>();
+        answerone.add(false);
+        answerone.add(true);
+        answerone.add(false);
+        answerone.add(true);
+        answerone.add(true);
+//answers two
+        this.answertwo = new ArrayList<>();
+        answertwo.add(false);
+        answertwo.add(true);
+        answertwo.add(true);
+//answers three
+        this.answerthree = new ArrayList<>();
+        answerthree.add(true);
+
 
 
     }
         //Questions
-        public String getlvlOneQuestions(int i){
-            if(i > questionsone.length-1){
-                return questionsone[3];
-            }
-            if(i < 0){
-                return questionsone[0];
-            }
-            return questionsone[i];
+        public String[] getlvlOneQuestions(){
+            return questionsone;
         }
-        public String getlvlTwoQuestions(int i){
-            if(i > questionstwo.length-1){
-                return questionstwo[3];
-            }
-            if(i < 0){
-                return questionstwo[0];
-            }
-            return questionstwo[i];
+        public String[] getlvlTwoQuestions(){
+            return questionstwo;
         }
-        public String getlvlThreeQuestions(int i){
-            if(i != questionsthree.length-1){
-                return questionsthree[0];
-            }
-            return questionsthree[i];
+        public String[] getlvlThreeQuestions(){
+            return questionsthree;
         }
         //Answers
-        public String getlvlOneAnswer(){
-        return "";
+        public ArrayList<Boolean> getlvlOneAnswer(){
+        return answerone;
         }
-        public String getlvlTwoAnswer(){
-            return "";
+        public ArrayList<Boolean> getlvlTwoAnswer(){
+            return answertwo;
         }
-        public String getlvlThreeAnswer(){
-            return "";
+        public ArrayList<Boolean> getlvlThreeAnswer(){
+            return answerthree;
         }
 }
 

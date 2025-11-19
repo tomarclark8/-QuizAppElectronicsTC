@@ -29,7 +29,14 @@ public class EndGame extends AppCompatActivity {
         Scorewl = (TextView) findViewById(R.id.scorewl);
         Again = (Button) findViewById(R.id.Again);
 
-
+        Again.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //on click switch to main questions class
+                Intent intent = new Intent(EndGame.this, StartGame.class);
+                startActivity(intent);
+            }
+        });
 
     }
 }

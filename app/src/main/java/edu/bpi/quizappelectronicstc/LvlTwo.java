@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class LvlTwo extends AppCompatActivity {
 
     TextView qnumindex2;
-    TextView questionsindex2;
+    TextView questions2;
     Button True;
     Button False;
 
@@ -25,7 +25,7 @@ private int lvlIndicator;
         setContentView(R.layout.activity_level_two);
 
         qnumindex2 = (TextView) findViewById(R.id.qnumindex2);
-        questionsindex2 = (TextView) findViewById(R.id.questionsindex2);
+        questions2 = (TextView) findViewById(R.id.questions2);
         True = (Button) findViewById(R.id.True);
         False = (Button) findViewById(R.id.False);
 

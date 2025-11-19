@@ -28,6 +28,7 @@ TextView Level;
         //intent level indicator from classes
         Intent intent = getIntent();
         int lvlIndicator = intent.getIntExtra("lvlIndicator", 1);
+        Level.setText("Level #"+lvlIndicator);
 
         nextLvl.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -35,16 +36,19 @@ TextView Level;
                 Intent intenttrans = new Intent();
 
                 if(lvlIndicator == 1) {
+                    Level.setText("Level #"+lvlIndicator);
                     intenttrans = new Intent(TransitionScreen.this, LvlOne.class);
                     intenttrans.putExtra("lvlIndicator", 2);
                     startActivity(intenttrans);
                 }
                 else if(lvlIndicator == 2) {
+                    Level.setText("Level #"+lvlIndicator);
                     intenttrans = new Intent(TransitionScreen.this, LvlTwo.class);
                     intenttrans.putExtra("lvlIndicator", 3);
                     startActivity(intenttrans);
                 }
                 else if(lvlIndicator == 3){
+                    Level.setText("Level #"+lvlIndicator);
                     intenttrans = new Intent(TransitionScreen.this, LvlThree.class);
                     // No need to pass lvlIndicator if it's the last level
                     startActivity(intenttrans);
