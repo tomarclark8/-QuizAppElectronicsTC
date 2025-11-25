@@ -22,8 +22,9 @@ public class LvlOne extends AppCompatActivity {
     Button True;
     Button False;
     private int lvlIndicator;
-    private int tscore;
+    private int tscore1;
     private int currentQuestion;
+    private int questionIndex = 1;
 
     Questions questions = new Questions();
     String[] questionArray= questions.getlvlOneQuestions();
@@ -71,19 +72,21 @@ public class LvlOne extends AppCompatActivity {
         // Check if user's answer is correct
         if(userAnswer == correctAnswer) {
             Toast.makeText(this, "Correct!", Toast.LENGTH_SHORT).show();
-            tscore++;
+            tscore1++;
         } else {
             Toast.makeText(this, "Wrong!", Toast.LENGTH_SHORT).show();
         }
 
         // Move to next question
         currentQuestion++;
+        questionIndex++;
 
         // Check if there are more questions
         if(currentQuestion < questionArray.length) {
             // Display next question
+            qnumindex1.setText("Question #"+questionIndex);
             questions1.setText(questionArray[currentQuestion]);
-        } else if(tscore >= questionArray.length-1){
+        } else if(tscore1 >= questionArray.length-1){
             // All questions answered, go to transition screen
             finishLevel();
         } else {
@@ -92,13 +95,13 @@ public class LvlOne extends AppCompatActivity {
     }
     private void finishLevel(){
         Intent intent = new Intent(LvlOne.this, TransitionScreen.class);
-        intent.putExtra("score", tscore);
+        intent.putExtra("score1", tscore1);
         intent.putExtra("lvlIndicator", lvlIndicator);
         startActivity(intent);
     }
     private void endGame(){
         Intent intent = new Intent(LvlOne.this, EndGame.class);
-        intent.putExtra("score", tscore);
+        intent.putExtra("score1", tscore1);
         intent.putExtra("lvlIndicator", lvlIndicator);
         startActivity(intent);
     }

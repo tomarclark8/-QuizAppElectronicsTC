@@ -22,8 +22,9 @@ public class LvlThree extends AppCompatActivity {
     Button True;
     Button False;
     private int lvlIndicator;
-    private int tscore;
+    private int tscore3;
     private int currentQuestion;
+    private int questionIndex = 1;
     Questions questions = new Questions();
     String[] questionArray= questions.getlvlThreeQuestions();
     ArrayList<Boolean> answersArray = questions.getlvlThreeAnswer();
@@ -68,19 +69,21 @@ public class LvlThree extends AppCompatActivity {
         // Check if user's answer is correct
         if(userAnswer == correctAnswer) {
             Toast.makeText(this, "Correct!", Toast.LENGTH_SHORT).show();
-            tscore++;
+            tscore3++;
         } else {
             Toast.makeText(this, "Wrong!", Toast.LENGTH_SHORT).show();
         }
 
         // Move to next question
         currentQuestion++;
+        questionIndex++;
 
         // Check if there are more questions
         if(currentQuestion < questionArray.length) {
             // Display next question
+            qnumindex3.setText("Question #"+questionIndex);
             questions3.setText(questionArray[currentQuestion]);
-        } else if(tscore >= questionArray.length-1){
+        } else if(tscore3 >= questionArray.length-1){
             // All questions answered, go to transition screen
             finishLevel();
         } else {
@@ -88,14 +91,14 @@ public class LvlThree extends AppCompatActivity {
         }
     }
     private void finishLevel(){
-        Intent intent = new Intent(LvlThree.this, TransitionScreen.class);
-        intent.putExtra("score", tscore);
+        Intent intent = new Intent(LvlThree.this, EndGame.class);
+        intent.putExtra("score3", tscore3);
         intent.putExtra("lvlIndicator", lvlIndicator);
         startActivity(intent);
     }
     private void endGame(){
         Intent intent = new Intent(LvlThree.this, EndGame.class);
-        intent.putExtra("score", tscore);
+        intent.putExtra("score3", tscore3);
         intent.putExtra("lvlIndicator", lvlIndicator);
         startActivity(intent);
     }
