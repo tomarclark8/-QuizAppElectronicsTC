@@ -12,14 +12,20 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.util.ArrayList;
+
 public class LvlThree extends AppCompatActivity {
 
     TextView qnumindex3;
     TextView questions3;
     Button True;
     Button False;
-
     private int lvlIndicator;
+    private int tscore;
+    private int currentQuestion;
+    Questions questions = new Questions();
+    String[] questionArray= questions.getlvlThreeQuestions();
+    ArrayList<Boolean> answersArray = questions.getlvlThreeAnswer();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +41,6 @@ public class LvlThree extends AppCompatActivity {
         //intent for score to check if min/ max correct
         Intent receivedIntent = getIntent();
         lvlIndicator = receivedIntent.getIntExtra("lvlIndicator", 2);
-
 
 
         //Buttons

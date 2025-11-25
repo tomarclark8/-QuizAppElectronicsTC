@@ -28,14 +28,20 @@ String[] questionsthree;
         answerone.add(false);
         answerone.add(true);
         answerone.add(true);
-//answers two
+        //answers two
         this.answertwo = new ArrayList<>();
-        answertwo.add(false);
-        answertwo.add(true);
-        answertwo.add(true);
-//answers three
+        answerone.add(false);
+        answerone.add(true);
+        answerone.add(false);
+        answerone.add(true);
+        answerone.add(true);
+        //answers three
         this.answerthree = new ArrayList<>();
-        answerthree.add(true);
+        answerone.add(false);
+        answerone.add(true);
+        answerone.add(false);
+        answerone.add(true);
+        answerone.add(true);
 
 
 

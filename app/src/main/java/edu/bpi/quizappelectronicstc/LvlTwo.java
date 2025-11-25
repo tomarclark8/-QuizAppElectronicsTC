@@ -9,14 +9,20 @@ import android.widget.TextView;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.ArrayList;
+
 public class LvlTwo extends AppCompatActivity {
 
     TextView qnumindex2;
     TextView questions2;
     Button True;
     Button False;
-
-private int lvlIndicator;
+    private int lvlIndicator;
+    private int tscore;
+    private int currentQuestion;
+    Questions questions = new Questions();
+    String[] questionArray= questions.getlvlTwoQuestions();
+    ArrayList<Boolean> answersArray = questions.getlvlTwoAnswer();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
