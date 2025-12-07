@@ -21,7 +21,7 @@ public class LvlThree extends AppCompatActivity {
     TextView questions3;
     Button True;
     Button False;
-    private int lvlIndicator;
+    //private int lvlIndicator;
     private int tscore3;
     private int currentQuestion;
     private int questionIndex = 1;
@@ -40,11 +40,6 @@ public class LvlThree extends AppCompatActivity {
         True = (Button) findViewById(R.id.True);
         False = (Button) findViewById(R.id.False);
 
-        //intent for score to check if min/ max correct
-        Intent receivedIntent = getIntent();
-        lvlIndicator = receivedIntent.getIntExtra("lvlIndicator", 2);
-
-
         //Buttons
         True.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,7 +48,6 @@ public class LvlThree extends AppCompatActivity {
                 checkAnswer(true);
             }
         });
-
         False.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -83,23 +77,16 @@ public class LvlThree extends AppCompatActivity {
             // Display next question
             qnumindex3.setText("Question #"+questionIndex);
             questions3.setText(questionArray[currentQuestion]);
+
         } else if(tscore3 >= questionArray.length-1){
-            // All questions answered, go to transition screen
-            finishLevel();
-        } else {
+            // All questions answered, go to end screen
             endGame();
         }
-    }
-    private void finishLevel(){
-        Intent intent = new Intent(LvlThree.this, EndGame.class);
-        intent.putExtra("score3", tscore3);
-        intent.putExtra("lvlIndicator", lvlIndicator);
-        startActivity(intent);
     }
     private void endGame(){
         Intent intent = new Intent(LvlThree.this, EndGame.class);
         intent.putExtra("score3", tscore3);
-        intent.putExtra("lvlIndicator", lvlIndicator);
+        intent.putExtra("lvlIndicator", 3);
         startActivity(intent);
     }
 }

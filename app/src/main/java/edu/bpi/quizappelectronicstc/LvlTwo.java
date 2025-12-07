@@ -18,7 +18,7 @@ public class LvlTwo extends AppCompatActivity {
     TextView questions2;
     Button True;
     Button False;
-    private int lvlIndicator;
+    //private int lvlIndicator;
     private int tscore2;
     private int currentQuestion;
     private int questionIndex = 1;
@@ -37,12 +37,6 @@ public class LvlTwo extends AppCompatActivity {
         True = (Button) findViewById(R.id.True);
         False = (Button) findViewById(R.id.False);
 
-        //intent for score to check if min/ max correct
-        Intent receivedIntent = getIntent();
-        lvlIndicator = receivedIntent.getIntExtra("lvlIndicator", 2);
-
-
-
         //Buttons
         True.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,7 +45,6 @@ public class LvlTwo extends AppCompatActivity {
                 checkAnswer(true);
             }
         });
-
         False.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -89,15 +82,15 @@ public class LvlTwo extends AppCompatActivity {
         }
     }
     private void finishLevel(){
-        Intent intent = new Intent(LvlTwo.this, TransitionScreen.class);
+        Intent intent = new Intent(LvlTwo.this, LvlThree.class);// transition
         intent.putExtra("score2", tscore2);
-        intent.putExtra("lvlIndicator", lvlIndicator);
+        intent.putExtra("lvlIndicator", 3);
         startActivity(intent);
     }
     private void endGame(){
         Intent intent = new Intent(LvlTwo.this, EndGame.class);
         intent.putExtra("score2", tscore2);
-        intent.putExtra("lvlIndicator", lvlIndicator);
+        intent.putExtra("lvlIndicator", 2);
         startActivity(intent);
     }
 }
