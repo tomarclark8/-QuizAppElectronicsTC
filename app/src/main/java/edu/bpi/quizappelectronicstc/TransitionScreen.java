@@ -59,10 +59,13 @@ TextView Level;
                     startActivity(intenttrans);
                 }
                 // End of Game Indicator
-                else if(lvlIndicator == 4) {
-                    Level.setText("Level #" + lvlIndicator);
+                else if(lvlIndicator == 4){
+                    Level.setText("Ready to See your Score?");
+                    nextLvl.setText("-> Click Here <-");
                     intenttrans = new Intent(TransitionScreen.this, EndGame.class);
-                    // End of Game Indicator
+                    intenttrans.putExtra("score1", 1);
+                    intenttrans.putExtra("score2", 1);
+                    intenttrans.putExtra("score3", 1);
                     startActivity(intenttrans);
                 }
 

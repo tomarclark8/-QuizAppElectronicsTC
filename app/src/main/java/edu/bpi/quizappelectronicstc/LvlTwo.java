@@ -37,6 +37,8 @@ public class LvlTwo extends AppCompatActivity {
         True = (Button) findViewById(R.id.True);
         False = (Button) findViewById(R.id.False);
 
+        //Initial Question Start
+        questions2.setText(questionArray[currentQuestion]);
         //Buttons
         True.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -82,7 +84,7 @@ public class LvlTwo extends AppCompatActivity {
         }
     }
     private void finishLevel(){
-        Intent intent = new Intent(LvlTwo.this, LvlThree.class);// transition
+        Intent intent = new Intent(LvlTwo.this, TransitionScreen.class);// transition
         intent.putExtra("score2", tscore2);
         intent.putExtra("lvlIndicator", 3);
         startActivity(intent);

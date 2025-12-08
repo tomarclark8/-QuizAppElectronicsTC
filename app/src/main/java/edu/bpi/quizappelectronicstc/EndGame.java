@@ -39,27 +39,27 @@ public class EndGame extends AppCompatActivity {
         if (lvlIndicator == 1) {
             Correct.setText("Correct: " + tscore1);
             Wrong.setText("Wrong: " + (5 - tscore1));
-            if(tscore2 >= 4 ) {
-                Scorewl.setText("You Winner!!" + 4);
+            if(tscore1 >= 4 ) {
+                Scorewl.setText("You Winner!!" + 1);
             } else{
-                Scorewl.setText("You Lose!!" + 3);
+                Scorewl.setText("You Lose!!" + 1);
             }
 
         }
+
         if (lvlIndicator == 2) {
-            Correct.setText("Correct: " + (tscore1 ));
-            Wrong.setText("Wrong: " + (5 - tscore1));
+            Correct.setText("Correct: " + (tscore2 ));
+            Wrong.setText("Wrong: " + (5 - tscore2));
             if(tscore2 >= 4 ) {
-                Scorewl.setText("You Winner!!" + 4);
+                Scorewl.setText("You Winner!!" + 2);
             } else{
-                Scorewl.setText("You Lose!!" + 3);
+                Scorewl.setText("You Lose!!" + 2);
             }
         }
-
 
         if (lvlIndicator >= 3) {
-            Correct.setText("Correct: " + tscore1 + tscore2 + tscore3);
-            Wrong.setText("Wrong: " + (15 - tscore1 + tscore2 + tscore3));
+            Correct.setText("Correct: " + (tscore1+tscore2+tscore3));
+            Wrong.setText("Wrong: " + (15 -(tscore1+tscore2+tscore3)));
             if(tscore3 >= 4 ) {
                 Scorewl.setText("You Winner!!" + 4);
             } else{
@@ -67,10 +67,6 @@ public class EndGame extends AppCompatActivity {
             }
 
         }
-
-
-
-
 
         Again.setOnClickListener(new View.OnClickListener() {
             @Override

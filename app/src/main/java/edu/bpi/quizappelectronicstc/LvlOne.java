@@ -88,7 +88,7 @@ public class LvlOne extends AppCompatActivity {
         }
     }
     private void finishLevel(){
-        Intent intent = new Intent(LvlOne.this, LvlTwo.class);
+        Intent intent = new Intent(LvlOne.this, TransitionScreen.class);
         intent.putExtra("score1", tscore1);
         intent.putExtra("lvlIndicator", 2);
         startActivity(intent);

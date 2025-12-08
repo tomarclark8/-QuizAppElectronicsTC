@@ -40,6 +40,8 @@ public class LvlThree extends AppCompatActivity {
         True = (Button) findViewById(R.id.True);
         False = (Button) findViewById(R.id.False);
 
+        //Initial Question Start
+        questions3.setText(questionArray[currentQuestion]);
         //Buttons
         True.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,15 +80,15 @@ public class LvlThree extends AppCompatActivity {
             qnumindex3.setText("Question #"+questionIndex);
             questions3.setText(questionArray[currentQuestion]);
 
-        } else if(tscore3 >= questionArray.length-1){
+        } else {
             // All questions answered, go to end screen
             endGame();
         }
     }
     private void endGame(){
-        Intent intent = new Intent(LvlThree.this, EndGame.class);
+        Intent intent = new Intent(LvlThree.this, TransitionScreen.class);
         intent.putExtra("score3", tscore3);
-        intent.putExtra("lvlIndicator", 3);
+        intent.putExtra("lvlIndicator", 4);
         startActivity(intent);
     }
 }
