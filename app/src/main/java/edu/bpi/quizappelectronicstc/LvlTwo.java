@@ -18,7 +18,6 @@ public class LvlTwo extends AppCompatActivity {
     TextView questions2;
     Button True;
     Button False;
-    //private int lvlIndicator;
     private int tscore2;
     private int currentQuestion;
     private int questionIndex = 1;
@@ -76,7 +75,7 @@ public class LvlTwo extends AppCompatActivity {
             // Display next question
             qnumindex2.setText("Question #"+questionIndex);
             questions2.setText(questionArray[currentQuestion]);
-        } else if(tscore2 >= questionArray.length-1){
+        }else if(tscore2 >= questionArray.length-1){
             // All questions answered, go to transition screen
             finishLevel();
         } else {
@@ -85,14 +84,14 @@ public class LvlTwo extends AppCompatActivity {
     }
     private void finishLevel(){
         Intent intent = new Intent(LvlTwo.this, TransitionScreen.class);// transition
-        intent.putExtra("score2", tscore2);
         intent.putExtra("lvlIndicator", 3);
+        intent.putExtra("score2", tscore2);
         startActivity(intent);
     }
     private void endGame(){
         Intent intent = new Intent(LvlTwo.this, EndGame.class);
-        intent.putExtra("score2", tscore2);
         intent.putExtra("lvlIndicator", 2);
+        intent.putExtra("score2", tscore2);
         startActivity(intent);
     }
 }

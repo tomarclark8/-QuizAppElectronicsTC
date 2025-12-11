@@ -21,7 +21,6 @@ public class LvlOne extends AppCompatActivity {
     TextView questions1;
     Button True;
     Button False;
-    private int lvlIndicator;
     private int tscore1;
     private int currentQuestion;
     private int questionIndex = 1;
@@ -43,6 +42,7 @@ public class LvlOne extends AppCompatActivity {
 
         //Initial Question Start
         questions1.setText(questionArray[currentQuestion]);
+
         //Buttons
         True.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -80,6 +80,7 @@ public class LvlOne extends AppCompatActivity {
             // Display next question
             qnumindex1.setText("Question #"+questionIndex);
             questions1.setText(questionArray[currentQuestion]);
+
         } else if(tscore1 >= questionArray.length-1){
             // All questions answered, go to transition screen
             finishLevel();
@@ -90,7 +91,7 @@ public class LvlOne extends AppCompatActivity {
     private void finishLevel(){
         Intent intent = new Intent(LvlOne.this, TransitionScreen.class);
         intent.putExtra("score1", tscore1);
-        intent.putExtra("lvlIndicator", 2);
+        intent.putExtra("lvlIndicator",2);
         startActivity(intent);
     }
     private void endGame(){

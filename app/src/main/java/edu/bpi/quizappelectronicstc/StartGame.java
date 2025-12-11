@@ -29,7 +29,7 @@ public class StartGame extends AppCompatActivity {
             @Override
             public void onClick(View v){
 
-                //on click switch to mainquestions class
+                //on click switch to transitions class
                 Intent intent = new Intent(StartGame.this, TransitionScreen.class);
                 intent.putExtra("lvlIndicator", 1);
                 startActivity(intent);

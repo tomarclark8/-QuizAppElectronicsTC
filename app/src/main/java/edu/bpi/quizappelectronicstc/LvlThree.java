@@ -21,7 +21,6 @@ public class LvlThree extends AppCompatActivity {
     TextView questions3;
     Button True;
     Button False;
-    //private int lvlIndicator;
     private int tscore3;
     private int currentQuestion;
     private int questionIndex = 1;
@@ -80,15 +79,22 @@ public class LvlThree extends AppCompatActivity {
             qnumindex3.setText("Question #"+questionIndex);
             questions3.setText(questionArray[currentQuestion]);
 
+        }else if(tscore3 >= questionArray.length-1){
+            // All questions answered, go to transition screen
+            finishLevel();
         } else {
-            // All questions answered, go to end screen
-            endGame();
+
         }
     }
-    private void endGame(){
-        Intent intent = new Intent(LvlThree.this, TransitionScreen.class);
+    private void finishLevel(){
+        Intent intent = new Intent(LvlThree.this, TransitionScreen.class);// transition
         intent.putExtra("score3", tscore3);
-        intent.putExtra("lvlIndicator", 4);
+        startActivity(intent);
+    }
+    private void endGame(){
+        Intent intent = new Intent(LvlThree.this, EndGame.class);
+        intent.putExtra("score3", tscore3);
+        intent.putExtra("lvlIndicator", 3);
         startActivity(intent);
     }
 }

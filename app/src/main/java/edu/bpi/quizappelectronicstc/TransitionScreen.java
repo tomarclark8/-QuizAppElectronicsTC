@@ -22,51 +22,66 @@ TextView Level;
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_transition_screen);
-//connect xml and class
+
         nextLvl = (Button) findViewById(R.id.nextLvl);
         Level = (TextView) findViewById(R.id.Level);
 
-        //intent level indicator from classes
+
+
+
+
         Intent intent = getIntent();
         int lvlIndicator = intent.getIntExtra("lvlIndicator", 1);
-        Level.setText("Level #"+lvlIndicator);
+        int tscore1 = intent.getIntExtra("score1", 1);
+        int tscore2 = intent.getIntExtra("score2", 1);
+        int tscore3 = intent.getIntExtra("score3", 1);
+
+        //Level 1 Indicator
+        if(lvlIndicator == 1) {
+            Level.setText("Level #"+lvlIndicator);
+        }
+        //Level 2 Indicator
+        if(lvlIndicator == 2) {
+            Level.setText("Level #"+lvlIndicator);
+        }
+        //Level 3 Indicator
+        if(lvlIndicator == 3){
+            Level.setText("Level #"+lvlIndicator);
+        }
+        if(lvlIndicator == 4) {
+            Level.setText("Ready to See your Score?");
+            nextLvl.setText("-> Click Here <-");
+        }
 
         nextLvl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v){
-                //Intent for Level Indicator
-                Intent intenttrans = new Intent();
 
                 //Level 1 Indicator
                 if(lvlIndicator == 1) {
-                    Level.setText("Level #"+lvlIndicator);
-                    intenttrans = new Intent(TransitionScreen.this, LvlOne.class);
-                    intenttrans.putExtra("lvlIndicator", 2);
-                    startActivity(intenttrans);
+                    Intent intent = new Intent(TransitionScreen.this, LvlOne.class);
+                    startActivity(intent);
                 }
+
                 //Level 2 Indicator
-                else if(lvlIndicator == 2) {
-                    Level.setText("Level #"+lvlIndicator);
-                    intenttrans = new Intent(TransitionScreen.this, LvlTwo.class);
-                    intenttrans.putExtra("lvlIndicator", 3);
-                    startActivity(intenttrans);
+                if(lvlIndicator == 2) {
+                    Intent intent = new Intent(TransitionScreen.this, LvlTwo.class);
+                    startActivity(intent);
                 }
+
                 //Level 3 Indicator
-                else if(lvlIndicator == 3){
-                    Level.setText("Level #"+lvlIndicator);
-                    intenttrans = new Intent(TransitionScreen.this, LvlThree.class);
-                    intenttrans.putExtra("lvlIndicator", 4);
-                    startActivity(intenttrans);
+                if(lvlIndicator == 3){
+                    Intent intent = new Intent(TransitionScreen.this, LvlThree.class);
+                    startActivity(intent);
                 }
+
                 // End of Game Indicator
-                else if(lvlIndicator == 4){
-                    Level.setText("Ready to See your Score?");
-                    nextLvl.setText("-> Click Here <-");
-                    intenttrans = new Intent(TransitionScreen.this, EndGame.class);
-                    intenttrans.putExtra("score1", 1);
-                    intenttrans.putExtra("score2", 1);
-                    intenttrans.putExtra("score3", 1);
-                    startActivity(intenttrans);
+                if(lvlIndicator == 4){
+                    Intent intent = new Intent(TransitionScreen.this, EndGame.class);
+                    intent.putExtra("score1", tscore1);
+                    intent.putExtra("score2", tscore2);
+                    intent.putExtra("score3", tscore3);
+                    startActivity(intent);
                 }
 
             }

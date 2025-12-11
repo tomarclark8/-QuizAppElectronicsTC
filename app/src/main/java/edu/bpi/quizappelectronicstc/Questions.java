@@ -19,16 +19,18 @@ String[] questionsthree;
                 "Conventional Current flows from Negative(-) to Positive(+)?",
                 "Ohm's Law is represented by the equation V=(I)(R)?",
                 "Make up something here lol"};
-        this.questionstwo = new String[]{"Is a red-red-blue-gold resistor nominal value greater than 45M-ohms?",
+        this.questionstwo = new String[]{
+                "Is a red-red-blue-gold resistor nominal value greater than 45M-ohms?",
                 "This the schematic symbol of a bulb?",
                 "Conventional Current flows from Negative(-) to Positive(+)?",
                 "Ohm's Law is represented by the equation V=(I)(R)?",
                 "Make up something here lol"};
-        this.questionsthree = new String[]{"Is a red-red-blue-gold resistor nominal value greater than 45M-ohms?",
-            "This the schematic symbol of a bulb?",
-            "Conventional Current flows from Negative(-) to Positive(+)?",
-            "Ohm's Law is represented by the equation V=(I)(R)?",
-            "Make up something here lol"};
+        this.questionsthree = new String[]{
+                "Is a red-red-blue-gold resistor nominal value greater than 45M-ohms?",
+                "This the schematic symbol of a bulb?",
+                "Conventional Current flows from Negative(-) to Positive(+)?",
+                "Ohm's Law is represented by the equation V=(I)(R)?",
+                "Make up something here lol"};
         //answers one
         this.answerone = new ArrayList<>();
         answerone.add(false);
