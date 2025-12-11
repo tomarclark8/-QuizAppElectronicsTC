@@ -52,14 +52,15 @@ public class EndGame extends AppCompatActivity {
             }
 
             if (lvlIndicator == 3) {
+                // Correct or Wrong
                 Correct.setText("Correct: " + (tscore3));
                 Wrong.setText("Wrong: " + (5 - tscore3));
                 Scorewl.setText("You Lose!!" + 3);
             }
         } else {
             if (lvlIndicator == 4) {
-            Correct.setText("Correct: " + (tscore1+tscore2+tscore3));
-            Wrong.setText("Wrong: " + (15 -(tscore1+tscore2+tscore3)));
+            Correct.setText("Correct: " + tscore1+""+tscore2+""+tscore3);
+            Wrong.setText("Wrong: " + 15 +""+tscore1+""+tscore2+""+tscore3);
             Scorewl.setText("You Lose!!" + 4);
             }
         }

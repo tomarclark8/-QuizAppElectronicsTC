@@ -83,11 +83,12 @@ public class LvlThree extends AppCompatActivity {
             // All questions answered, go to transition screen
             finishLevel();
         } else {
-
+            endGame();
         }
     }
     private void finishLevel(){
         Intent intent = new Intent(LvlThree.this, TransitionScreen.class);// transition
+        intent.putExtra("lvlIndicator", 4);
         intent.putExtra("score3", tscore3);
         startActivity(intent);
     }

@@ -78,6 +78,7 @@ TextView Level;
                 // End of Game Indicator
                 if(lvlIndicator == 4){
                     Intent intent = new Intent(TransitionScreen.this, EndGame.class);
+                    intent.putExtra("lvlIndicator", 4);
                     intent.putExtra("score1", tscore1);
                     intent.putExtra("score2", tscore2);
                     intent.putExtra("score3", tscore3);
