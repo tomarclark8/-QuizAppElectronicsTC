@@ -9,6 +9,9 @@ public class Questions {
 String[] questionsone;
 String[] questionstwo;
 String[] questionsthree;
+    String[] hintOne;
+    String[] hintTwo;
+    String[] hintThree;
     ArrayList<Boolean> answerone;
     ArrayList<Boolean> answertwo;
     ArrayList<Boolean> answerthree;
@@ -31,6 +34,11 @@ String[] questionsthree;
                 "Conventional Current flows from Negative(-) to Positive(+)?",
                 "Ohm's Law is represented by the equation V=(I)(R)?",
                 "Make up something here lol"};
+
+        this.hintOne = new String[]{"hint one"};
+        this.hintTwo = new String[]{"hint two"};
+        this.hintThree = new String[]{"hint three"};
+
         //answers one
         this.answerone = new ArrayList<>();
         answerone.add(false);
@@ -76,6 +84,16 @@ String[] questionsthree;
         public ArrayList<Boolean> getlvlThreeAnswer(){
             return answerthree;
         }
+        //Hints
+        public String[] getlvlOneHints(){
+        return hintOne;
+        }
+    public String[] getlvlTwoHints(){
+        return hintTwo;
+    }
+    public String[] getlvlThreeHints(){
+        return hintThree;
+    }
 }
 
 

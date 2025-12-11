@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.QuizAppElectronicsTC">
         <activity
+            android:name=".ViewHintActivity"
+            android:exported="false" />
+        <activity
             android:name=".TransitionScreen"
             android:exported="false" />
         <activity

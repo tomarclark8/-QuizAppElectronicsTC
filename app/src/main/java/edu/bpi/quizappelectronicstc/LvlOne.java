@@ -21,6 +21,7 @@ public class LvlOne extends AppCompatActivity {
     TextView questions1;
     Button True;
     Button False;
+    Button Hint;
     private int tscore1;
     private int currentQuestion;
     private int questionIndex = 1;
@@ -28,7 +29,7 @@ public class LvlOne extends AppCompatActivity {
     Questions questions = new Questions();
     String[] questionArray= questions.getlvlOneQuestions();
     ArrayList<Boolean> answersArray = questions.getlvlOneAnswer();
-
+    String[] hintsArray = questions.getlvlOneHints();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,7 +40,7 @@ public class LvlOne extends AppCompatActivity {
         questions1 = (TextView) findViewById(R.id.questions1);
         True = (Button) findViewById(R.id.True);
         False = (Button) findViewById(R.id.False);
-
+        Hint = (Button) findViewById(R.id.Hint);
         //Initial Question Start
         questions1.setText(questionArray[currentQuestion]);
 
@@ -58,6 +59,19 @@ public class LvlOne extends AppCompatActivity {
                 checkAnswer(false);
             }
         });
+        Hint.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showHint();
+            }
+        });
+    }
+
+    private void showHint() {
+        Intent intent = new Intent(LvlOne.this, ViewHintActivity.class);
+        intent.putExtra("hint", hintsArray[currentQuestion]);
+        intent.putExtra("answer", answersArray.get(currentQuestion));
+        startActivity(intent);
     }
     private void checkAnswer(boolean userAnswer) {
         // Get the correct answer for current question

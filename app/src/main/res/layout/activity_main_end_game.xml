@@ -50,4 +50,14 @@
         android:textSize="50sp"
         android:translationX="45dp"
         android:translationY="250dp" />
+
+    <Button
+        android:id="@+id/EmailScore"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Email Score?"
+        android:textSize="18sp"
+        android:backgroundTint="#1976D2"
+        android:paddingVertical="16dp"
+        android:layout_marginBottom="16dp"/>
 </LinearLayout>

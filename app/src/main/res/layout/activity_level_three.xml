@@ -48,4 +48,13 @@
         android:translationX="0dp"
         android:translationY="380dp" />
 
+    <Button
+        android:id="@+id/Hint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Hint"
+        android:textSize="18sp"
+        android:backgroundTint="#FF9800"
+        android:paddingVertical="16dp"/>
+
 </LinearLayout>

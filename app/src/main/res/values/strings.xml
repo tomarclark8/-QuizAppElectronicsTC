@@ -1,87 +1,87 @@
 <resources>
     <string name="app_name">QuizAppElectronicsTC</string>
 
-        <!-- Start Game Activity -->
-        <string name="start_game_title">Electronics Quiz</string>
-        <string name="start_game_instructions">Test your knowledge of electronics!</string>
-        <string name="start_button">Start Quiz</string>
+    <!-- Start Game Activity -->
+    <string name="start_game_title">Electronics Quiz</string>
+    <string name="start_game_instructions">Test your knowledge of electronics!</string>
+    <string name="start_button">Start Quiz</string>
 
-        <!-- Level Activities -->
-        <string name="question_number">Question #%1$d</string>
-        <string name="true_button">True</string>
-        <string name="false_button">False</string>
-        <string name="hint_button">Hint</string>
+    <!-- Level Activities -->
+    <string name="question_number">Question #%1$d</string>
+    <string name="true_button">True</string>
+    <string name="false_button">False</string>
+    <string name="hint_button">Hint</string>
 
-        <!-- Transition Screen -->
-        <string name="level_title">Level #%1$d</string>
-        <string name="next_level_button">Next Level</string>
-        <string name="view_score_prompt">Ready to See your Score?</string>
-        <string name="click_here">-> Click Here &lt;-</string>
+    <!-- Transition Screen -->
+    <string name="level_title">Level #%1$d</string>
+    <string name="next_level_button">Next Level</string>
+    <string name="view_score_prompt">Ready to See your Score?</string>
+    <string name="click_here">-> Click Here &lt;-</string>
 
-        <!-- End Game Activity -->
-        <string name="correct_label">Correct: %1$d</string>
-        <string name="wrong_label">Wrong: %1$d</string>
-        <string name="you_lose_level">You Lost at Level %1$d!</string>
-        <string name="final_score_label">Final Score</string>
-        <string name="total_correct">Total Correct: %1$d/15</string>
-        <string name="total_wrong">Total Wrong: %1$d/15</string>
-        <string name="you_win">Congratulations! You Won!</string>
-        <string name="play_again_button">Play Again</string>
-        <string name="email_score_button">Email My Score</string>
+    <!-- End Game Activity -->
+    <string name="correct_label">Correct: %1$d</string>
+    <string name="wrong_label">Wrong: %1$d</string>
+    <string name="you_lose_level">You Lost at Level %1$d!</string>
+    <string name="final_score_label">Final Score</string>
+    <string name="total_correct">Total Correct: %1$d/15</string>
+    <string name="total_wrong">Total Wrong: %1$d/15</string>
+    <string name="you_win">Congratulations! You Won!</string>
+    <string name="play_again_button">Play Again</string>
+    <string name="email_score_button">Email My Score</string>
 
-        <!-- Hint Activity -->
-        <string name="hint_title">Hint</string>
-        <string name="back_button">Back to Quiz</string>
+    <!-- Hint Activity -->
+    <string name="hint_title">Hint</string>
+    <string name="back_button">Back to Quiz</string>
 
-        <!-- Toast Messages -->
-        <string name="toast_correct">Correct!</string>
-        <string name="toast_wrong">Wrong!</string>
+    <!-- Toast Messages -->
+    <string name="toast_correct">Correct!</string>
+    <string name="toast_wrong">Wrong!</string>
 
-        <!-- Email -->
-        <string name="email_subject">My Electronics Quiz Score</string>
-        <string name="email_body">Hi,\n\nI completed the Electronics Quiz!\n\nMy Results:\nCorrect Answers: %1$d out of 15\nWrong Answers: %2$d out of 15\n\nThanks!</string>
-        <string name="email_chooser_title">Send score via:</string>
+    <!-- Email -->
+    <string name="email_subject">My Electronics Quiz Score</string>
+    <string name="email_body">Hi,\n\nI completed the Electronics Quiz!\n\nMy Results:\nCorrect Answers: %1$d out of 15\nWrong Answers: %2$d out of 15\n\nThanks!</string>
+    <string name="email_chooser_title">Send score via:</string>
 
-        <!-- Questions Level 1 -->
-        <string name="q1_level1">Is a red-red-blue-gold resistor nominal value greater than 45M-ohms?</string>
-        <string name="q2_level1">This is the schematic symbol of a bulb?</string>
-        <string name="q3_level1">Conventional Current flows from Negative(-) to Positive(+)?</string>
-        <string name="q4_level1">Ohm\'s Law is represented by the equation V=(I)(R)?</string>
-        <string name="q5_level1">A 100 ohm resistor with 5V across it has 50mA of current?</string>
+    <!-- Questions Level 1 -->
+    <string name="q1_level1">Is a red-red-blue-gold resistor nominal value greater than 45M-ohms?</string>
+    <string name="q2_level1">This is the schematic symbol of a bulb?</string>
+    <string name="q3_level1">Conventional Current flows from Negative(-) to Positive(+)?</string>
+    <string name="q4_level1">Ohm\'s Law is represented by the equation V=(I)(R)?</string>
+    <string name="q5_level1">A 100 ohm resistor with 5V across it has 50mA of current?</string>
 
-        <!-- Hints Level 1 -->
-        <string name="hint1_level1">Hint: Red-Red-Blue is 2200, multiply by 1M (blue). Is 2200M > 45M?</string>
-        <string name="hint2_level1">Hint: Check if the symbol shows a light bulb representation.</string>
-        <string name="hint3_level1">Hint: Conventional current flows from positive to negative terminal.</string>
-        <string name="hint4_level1">Hint: Ohm\'s Law states Voltage = Current × Resistance.</string>
-        <string name="hint5_level1">Hint: Use Ohm\'s Law: I = V/R = 5/100 = 0.05A = 50mA</string>
+    <!-- Hints Level 1 -->
+    <string name="hint1_level1">Hint: Red-Red-Blue is 2200, multiply by 1M (blue). Is 2200M > 45M?</string>
+    <string name="hint2_level1">Hint: Check if the symbol shows a light bulb representation.</string>
+    <string name="hint3_level1">Hint: Conventional current flows from positive to negative terminal.</string>
+    <string name="hint4_level1">Hint: Ohm\'s Law states Voltage = Current × Resistance.</string>
+    <string name="hint5_level1">Hint: Use Ohm\'s Law: I = V/R = 5/100 = 0.05A = 50mA</string>
 
-        <!-- Questions Level 2 -->
-        <string name="q1_level2">A series circuit has only one path for current flow?</string>
-        <string name="q2_level2">In a parallel circuit, voltage is the same across all branches?</string>
-        <string name="q3_level2">A capacitor blocks DC current in steady state?</string>
-        <string name="q4_level2">An LED is a type of diode that emits light?</string>
-        <string name="q5_level2">Kirchhoff\'s Current Law states that current entering equals current leaving?</string>
+    <!-- Questions Level 2 -->
+    <string name="q1_level2">A series circuit has only one path for current flow?</string>
+    <string name="q2_level2">In a parallel circuit, voltage is the same across all branches?</string>
+    <string name="q3_level2">A capacitor blocks DC current in steady state?</string>
+    <string name="q4_level2">An LED is a type of diode that emits light?</string>
+    <string name="q5_level2">Kirchhoff\'s Current Law states that current entering equals current leaving?</string>
 
-        <!-- Hints Level 2 -->
-        <string name="hint1_level2">Hint: Series means components are connected end-to-end.</string>
-        <string name="hint2_level2">Hint: In parallel, all components share the same two connection points.</string>
-        <string name="hint3_level2">Hint: After charging, capacitors act as open circuits to DC.</string>
-        <string name="hint4_level2">Hint: LED stands for Light Emitting Diode.</string>
-        <string name="hint5_level2">Hint: KCL is based on conservation of charge.</string>
+    <!-- Hints Level 2 -->
+    <string name="hint1_level2">Hint: Series means components are connected end-to-end.</string>
+    <string name="hint2_level2">Hint: In parallel, all components share the same two connection points.</string>
+    <string name="hint3_level2">Hint: After charging, capacitors act as open circuits to DC.</string>
+    <string name="hint4_level2">Hint: LED stands for Light Emitting Diode.</string>
+    <string name="hint5_level2">Hint: KCL is based on conservation of charge.</string>
 
-        <!-- Questions Level 3 -->
-        <string name="q1_level3">A transistor can be used as an amplifier?</string>
-        <string name="q2_level3">AC frequency is measured in Hertz?</string>
-        <string name="q3_level3">A transformer can change AC voltage levels?</string>
-        <string name="q4_level3">Digital circuits use only two voltage levels?</string>
-        <string name="q5_level3">Power in watts equals voltage times current?</string>
+    <!-- Questions Level 3 -->
+    <string name="q1_level3">A transistor can be used as an amplifier?</string>
+    <string name="q2_level3">AC frequency is measured in Hertz?</string>
+    <string name="q3_level3">A transformer can change AC voltage levels?</string>
+    <string name="q4_level3">Digital circuits use only two voltage levels?</string>
+    <string name="q5_level3">Power in watts equals voltage times current?</string>
 
-        <!-- Hints Level 3 -->
-        <string name="hint1_level3">Hint: Transistors can amplify small signals to larger ones.</string>
-        <string name="hint2_level3">Hint: Hertz (Hz) represents cycles per second.</string>
-        <string name="hint3_level3">Hint: Transformers work on electromagnetic induction principle.</string>
-        <string name="hint4_level3">Hint: Digital logic uses HIGH (1) and LOW (0) states.</string>
-        <string name="hint5_level3">Hint: Power formula is P = V × I</string>
+    <!-- Hints Level 3 -->
+    <string name="hint1_level3">Hint: Transistors can amplify small signals to larger ones.</string>
+    <string name="hint2_level3">Hint: Hertz (Hz) represents cycles per second.</string>
+    <string name="hint3_level3">Hint: Transformers work on electromagnetic induction principle.</string>
+    <string name="hint4_level3">Hint: Digital logic uses HIGH (1) and LOW (0) states.</string>
+    <string name="hint5_level3">Hint: Power formula is P = V × I</string>
 
 </resources>

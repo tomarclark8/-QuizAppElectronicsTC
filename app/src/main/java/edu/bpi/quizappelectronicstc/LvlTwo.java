@@ -18,13 +18,14 @@ public class LvlTwo extends AppCompatActivity {
     TextView questions2;
     Button True;
     Button False;
+    Button Hint;
     private int tscore2;
     private int currentQuestion;
     private int questionIndex = 1;
     Questions questions = new Questions();
     String[] questionArray= questions.getlvlTwoQuestions();
     ArrayList<Boolean> answersArray = questions.getlvlTwoAnswer();
-
+    String[] hintsArray = questions.getlvlTwoHints();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,7 +36,7 @@ public class LvlTwo extends AppCompatActivity {
         questions2 = (TextView) findViewById(R.id.questions2);
         True = (Button) findViewById(R.id.True);
         False = (Button) findViewById(R.id.False);
-
+        Hint = (Button) findViewById(R.id.Hint);
         //Initial Question Start
         questions2.setText(questionArray[currentQuestion]);
         //Buttons
@@ -53,6 +54,20 @@ public class LvlTwo extends AppCompatActivity {
                 checkAnswer(false);
             }
         });
+
+        Hint.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showHint();
+            }
+        });
+    }
+
+    private void showHint() {
+        Intent intent = new Intent(LvlTwo.this, ViewHintActivity.class);
+        intent.putExtra("hint", hintsArray[currentQuestion]);
+        intent.putExtra("answer", answersArray.get(currentQuestion));
+        startActivity(intent);
     }
     private void checkAnswer(boolean userAnswer) {
         // Get the correct answer for current question
