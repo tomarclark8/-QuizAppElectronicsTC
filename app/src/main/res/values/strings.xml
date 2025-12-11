@@ -1,87 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">QuizAppElectronicsTC</string>
+    <!-- App Name -->
+    <string name="app_name">Quiz App Electronics TC</string>
 
-    <!-- Start Game Activity -->
-    <string name="start_game_title">Electronics Quiz</string>
-    <string name="start_game_instructions">Test your knowledge of electronics!</string>
-    <string name="start_button">Start Quiz</string>
+    <!-- Button Labels -->
+    <string name="button_true">True</string>
+    <string name="button_false">False</string>
+    <string name="button_hint">Hint</string>
+    <string name="button_next_level">Next Level</string>
+    <string name="button_play_again">Play Again</string>
+    <string name="button_start">Start Quiz</string>
+    <string name="button_back">Back</string>
+    <string name="button_email_score">Email Score</string>
 
-    <!-- Level Activities -->
-    <string name="question_number">Question #%1$d</string>
-    <string name="true_button">True</string>
-    <string name="false_button">False</string>
-    <string name="hint_button">Hint</string>
+    <!-- Screen Titles -->
+    <string name="start_screen_title">Electronics Quiz</string>
+    <string name="start_screen_subtitle">Test Your Knowledge</string>
+    <string name="transition_ready">Ready for Level</string>
+    <string name="transition_complete">Level Complete!</string>
+    <string name="hint_screen_title">Hint</string>
+    <string name="end_game_title">Quiz Complete</string>
 
-    <!-- Transition Screen -->
-    <string name="level_title">Level #%1$d</string>
-    <string name="next_level_button">Next Level</string>
-    <string name="view_score_prompt">Ready to See your Score?</string>
-    <string name="click_here">-> Click Here &lt;-</string>
+    <!-- Score Labels -->
+    <string name="correct_label">Correct:</string>
+    <string name="wrong_label">Wrong:</string>
+    <string name="total_questions">Total Questions:</string>
+    <string name="percentage">Percentage:</string>
+    <string name="level_label">Level</string>
+    <string name="question_number">Question #</string>
 
-    <!-- End Game Activity -->
-    <string name="correct_label">Correct: %1$d</string>
-    <string name="wrong_label">Wrong: %1$d</string>
-    <string name="you_lose_level">You Lost at Level %1$d!</string>
-    <string name="final_score_label">Final Score</string>
-    <string name="total_correct">Total Correct: %1$d/15</string>
-    <string name="total_wrong">Total Wrong: %1$d/15</string>
-    <string name="you_win">Congratulations! You Won!</string>
-    <string name="play_again_button">Play Again</string>
-    <string name="email_score_button">Email My Score</string>
-
-    <!-- Hint Activity -->
-    <string name="hint_title">Hint</string>
-    <string name="back_button">Back to Quiz</string>
-
-    <!-- Toast Messages -->
+    <!-- Messages -->
+    <string name="you_win">Congratulations! You Win!</string>
+    <string name="you_lose">You Lose!</string>
+    <string name="congratulations">Congratulations! You completed all levels!</string>
     <string name="toast_correct">Correct!</string>
     <string name="toast_wrong">Wrong!</string>
 
+    <!-- Hint Screen -->
+    <string name="answer_label">Answer:</string>
+    <string name="answer_true">True</string>
+    <string name="answer_false">False</string>
+    <string name="hint_description">Here\'s a hint to help you:</string>
+
     <!-- Email -->
     <string name="email_subject">My Electronics Quiz Score</string>
-    <string name="email_body">Hi,\n\nI completed the Electronics Quiz!\n\nMy Results:\nCorrect Answers: %1$d out of 15\nWrong Answers: %2$d out of 15\n\nThanks!</string>
-    <string name="email_chooser_title">Send score via:</string>
+    <string name="email_body_part1">Here are my quiz results:</string>
+    <string name="send_email">Send Email</string>
 
-    <!-- Questions Level 1 -->
-    <string name="q1_level1">Is a red-red-blue-gold resistor nominal value greater than 45M-ohms?</string>
-    <string name="q2_level1">This is the schematic symbol of a bulb?</string>
-    <string name="q3_level1">Conventional Current flows from Negative(-) to Positive(+)?</string>
-    <string name="q4_level1">Ohm\'s Law is represented by the equation V=(I)(R)?</string>
-    <string name="q5_level1">A 100 ohm resistor with 5V across it has 50mA of current?</string>
-
-    <!-- Hints Level 1 -->
-    <string name="hint1_level1">Hint: Red-Red-Blue is 2200, multiply by 1M (blue). Is 2200M > 45M?</string>
-    <string name="hint2_level1">Hint: Check if the symbol shows a light bulb representation.</string>
-    <string name="hint3_level1">Hint: Conventional current flows from positive to negative terminal.</string>
-    <string name="hint4_level1">Hint: Ohm\'s Law states Voltage = Current × Resistance.</string>
-    <string name="hint5_level1">Hint: Use Ohm\'s Law: I = V/R = 5/100 = 0.05A = 50mA</string>
-
-    <!-- Questions Level 2 -->
-    <string name="q1_level2">A series circuit has only one path for current flow?</string>
-    <string name="q2_level2">In a parallel circuit, voltage is the same across all branches?</string>
-    <string name="q3_level2">A capacitor blocks DC current in steady state?</string>
-    <string name="q4_level2">An LED is a type of diode that emits light?</string>
-    <string name="q5_level2">Kirchhoff\'s Current Law states that current entering equals current leaving?</string>
-
-    <!-- Hints Level 2 -->
-    <string name="hint1_level2">Hint: Series means components are connected end-to-end.</string>
-    <string name="hint2_level2">Hint: In parallel, all components share the same two connection points.</string>
-    <string name="hint3_level2">Hint: After charging, capacitors act as open circuits to DC.</string>
-    <string name="hint4_level2">Hint: LED stands for Light Emitting Diode.</string>
-    <string name="hint5_level2">Hint: KCL is based on conservation of charge.</string>
-
-    <!-- Questions Level 3 -->
-    <string name="q1_level3">A transistor can be used as an amplifier?</string>
-    <string name="q2_level3">AC frequency is measured in Hertz?</string>
-    <string name="q3_level3">A transformer can change AC voltage levels?</string>
-    <string name="q4_level3">Digital circuits use only two voltage levels?</string>
-    <string name="q5_level3">Power in watts equals voltage times current?</string>
-
-    <!-- Hints Level 3 -->
-    <string name="hint1_level3">Hint: Transistors can amplify small signals to larger ones.</string>
-    <string name="hint2_level3">Hint: Hertz (Hz) represents cycles per second.</string>
-    <string name="hint3_level3">Hint: Transformers work on electromagnetic induction principle.</string>
-    <string name="hint4_level3">Hint: Digital logic uses HIGH (1) and LOW (0) states.</string>
-    <string name="hint5_level3">Hint: Power formula is P = V × I</string>
-
+    <!-- Instructions -->
+    <string name="instructions">Answer True or False for each question. You need to get most questions right to advance!</string>
+    <string name="ready_for_score">Ready to See Your Score?</string>
+    <string name="click_here">-> Click Here &lt;-</string>
 </resources>

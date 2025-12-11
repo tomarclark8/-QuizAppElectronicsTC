@@ -77,10 +77,10 @@ public class LvlThree extends AppCompatActivity {
 
         // Check if user's answer is correct
         if(userAnswer == correctAnswer) {
-            Toast.makeText(this, "Correct!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,  R.string.toast_correct,Toast.LENGTH_SHORT).show();
             tscore3++;
         } else {
-            Toast.makeText(this, "Wrong!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,  R.string.toast_wrong, Toast.LENGTH_SHORT).show();
         }
 
         // Move to next question
@@ -90,7 +90,7 @@ public class LvlThree extends AppCompatActivity {
         // Check if there are more questions
         if(currentQuestion < questionArray.length) {
             // Display next question
-            qnumindex3.setText("Question #"+questionIndex);
+            qnumindex3.setText(getString(R.string.question_number)+questionIndex);
             questions3.setText(questionArray[currentQuestion]);
 
         }else if(tscore3 >= questionArray.length-1){
@@ -111,7 +111,9 @@ public class LvlThree extends AppCompatActivity {
     private void endGame(){
         Intent intent = new Intent(LvlThree.this, EndGame.class);
         intent.putExtra("score3", tscore3);
-        intent.putExtra("lvlIndicator", 3);
+        intent.putExtra("score1", getIntent().getIntExtra("score1", 0));
+        intent.putExtra("score2", getIntent().getIntExtra("score2", 0));
+        intent.putExtra("score3", tscore3);
         startActivity(intent);
     }
 }

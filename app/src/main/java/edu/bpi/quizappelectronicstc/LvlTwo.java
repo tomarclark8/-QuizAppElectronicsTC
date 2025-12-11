@@ -22,23 +22,36 @@ public class LvlTwo extends AppCompatActivity {
     private int tscore2;
     private int currentQuestion;
     private int questionIndex = 1;
+
+
     Questions questions = new Questions();
     String[] questionArray= questions.getlvlTwoQuestions();
     ArrayList<Boolean> answersArray = questions.getlvlTwoAnswer();
     String[] hintsArray = questions.getlvlTwoHints();
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_level_two);
 
+
+
         qnumindex2 = (TextView) findViewById(R.id.qnumindex2);
         questions2 = (TextView) findViewById(R.id.questions2);
         True = (Button) findViewById(R.id.True);
         False = (Button) findViewById(R.id.False);
         Hint = (Button) findViewById(R.id.Hint);
+
+
+
         //Initial Question Start
         questions2.setText(questionArray[currentQuestion]);
+
+
+
         //Buttons
         True.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,7 +67,6 @@ public class LvlTwo extends AppCompatActivity {
                 checkAnswer(false);
             }
         });
-
         Hint.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -75,10 +87,10 @@ public class LvlTwo extends AppCompatActivity {
 
         // Check if user's answer is correct
         if(userAnswer == correctAnswer) {
-            Toast.makeText(this, "Correct!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.toast_correct, Toast.LENGTH_SHORT).show();
             tscore2++;
         } else {
-            Toast.makeText(this, "Wrong!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.toast_wrong, Toast.LENGTH_SHORT).show();
         }
 
         // Move to next question
@@ -88,7 +100,7 @@ public class LvlTwo extends AppCompatActivity {
         // Check if there are more questions
         if(currentQuestion < questionArray.length) {
             // Display next question
-            qnumindex2.setText("Question #"+questionIndex);
+            qnumindex2.setText(getString(R.string.question_number)+questionIndex);
             questions2.setText(questionArray[currentQuestion]);
         }else if(tscore2 >= questionArray.length-1){
             // All questions answered, go to transition screen
@@ -107,6 +119,7 @@ public class LvlTwo extends AppCompatActivity {
     private void endGame(){
         Intent intent = new Intent(LvlTwo.this, EndGame.class);
         intent.putExtra("lvlIndicator", 2);
+        intent.putExtra("score1", getIntent().getIntExtra("score1", 0));
         intent.putExtra("score2", tscore2);
         startActivity(intent);
     }

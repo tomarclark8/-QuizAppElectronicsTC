@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App Name -->
+    <string name="app_name">Aplicación de Cuestionario Electrónica TC</string>
+
+    <!-- Button Labels -->
+    <string name="button_true">Verdadero</string>
+    <string name="button_false">Falso</string>
+    <string name="button_hint">Pista</string>
+    <string name="button_next_level">Siguiente Nivel</string>
+    <string name="button_play_again">Jugar de Nuevo</string>
+    <string name="button_start">Iniciar Cuestionario</string>
+    <string name="button_back">Volver</string>
+    <string name="button_email_score">Enviar Puntuación por Correo</string>
+
+    <!-- Screen Titles -->
+    <string name="start_screen_title">Cuestionario de Electrónica</string>
+    <string name="start_screen_subtitle">Pon a Prueba tus Conocimientos</string>
+    <string name="transition_ready">Listo para el Nivel</string>
+    <string name="transition_complete">¡Nivel Completado!</string>
+    <string name="hint_screen_title">Pista</string>
+    <string name="end_game_title">Cuestionario Completado</string>
+
+    <!-- Score Labels -->
+    <string name="correct_label">Correctas:</string>
+    <string name="wrong_label">Incorrectas:</string>
+    <string name="total_questions">Preguntas Totales:</string>
+    <string name="percentage">Porcentaje:</string>
+    <string name="level_label">Nivel</string>
+    <string name="question_number">Pregunta #</string>
+
+    <!-- Messages -->
+    <string name="you_win">¡Felicidades! ¡Ganaste!</string>
+    <string name="you_lose">¡Perdiste!</string>
+    <string name="congratulations">¡Felicidades! ¡Completaste todos los niveles!</string>
+    <string name="toast_correct">¡Correcto!</string>
+    <string name="toast_wrong">¡Incorrecto!</string>
+
+    <!-- Hint Screen -->
+    <string name="answer_label">Respuesta:</string>
+    <string name="answer_true">Verdadero</string>
+    <string name="answer_false">Falso</string>
+    <string name="hint_description">Aquí hay una pista para ayudarte:</string>
+
+    <!-- Email -->
+    <string name="email_subject">Mi Puntuación del Cuestionario de Electrónica</string>
+    <string name="email_body_part1">Aquí están mis resultados del cuestionario:</string>
+    <string name="send_email">Enviar Correo</string>
+
+    <!-- Instructions -->
+    <string name="instructions">Responde Verdadero o Falso para cada pregunta. ¡Necesitas acertar la mayoría de las preguntas para avanzar!</string>
+    <string name="ready_for_score">¿Listo para Ver tu Puntuación?</string>
+    <string name="click_here">-> Haz Clic Aquí &lt;-</string>
+</resources>

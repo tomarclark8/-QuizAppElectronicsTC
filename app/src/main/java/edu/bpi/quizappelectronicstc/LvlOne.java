@@ -92,7 +92,7 @@ public class LvlOne extends AppCompatActivity {
         // Check if there are more questions
         if(currentQuestion < questionArray.length) {
             // Display next question
-            qnumindex1.setText("Question #"+questionIndex);
+            qnumindex1.setText(getString(R.string.question_number)+questionIndex);
             questions1.setText(questionArray[currentQuestion]);
 
         } else if(tscore1 >= questionArray.length-1){
