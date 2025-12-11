@@ -31,9 +31,9 @@ public class EndGame extends AppCompatActivity {
 
         //
         Intent intent = getIntent();
-        int tscore1 = intent.getIntExtra("score1", 1);
-        int tscore2 = intent.getIntExtra("score2", 1);
-        int tscore3 = intent.getIntExtra("score3", 1);
+        int tscore1 = intent.getIntExtra("score1", 0);
+        int tscore2 = intent.getIntExtra("score2", 0);
+        int tscore3 = intent.getIntExtra("score3", 0);
         int lvlIndicator = intent.getIntExtra("lvlIndicator", 1);
 
         if(lvlIndicator < 4){
@@ -41,27 +41,27 @@ public class EndGame extends AppCompatActivity {
                 // Correct or Wrong
                 Correct.setText("Correct: " + tscore1);
                 Wrong.setText("Wrong: " + (5 - tscore1));
-                Scorewl.setText("You Lose!!" + 1);
+                Scorewl.setText("You Lose!!" );
             }
 
             if (lvlIndicator == 2) {
                 // Correct or Wrong
                 Correct.setText("Correct: " + (tscore2));
                 Wrong.setText("Wrong: " + (5 - tscore2));
-                Scorewl.setText("You Lose!!" + 2);
+                Scorewl.setText("You Lose!!" );
             }
 
             if (lvlIndicator == 3) {
                 // Correct or Wrong
                 Correct.setText("Correct: " + (tscore3));
                 Wrong.setText("Wrong: " + (5 - tscore3));
-                Scorewl.setText("You Lose!!" + 3);
+                Scorewl.setText("You Lose!!" );
             }
         } else {
             if (lvlIndicator == 4) {
-            Correct.setText("Correct: " + tscore1+""+tscore2+""+tscore3);
-            Wrong.setText("Wrong: " + 15 +""+tscore1+""+tscore2+""+tscore3);
-            Scorewl.setText("You Lose!!" + 4);
+            Correct.setText("Correct: " + (tscore1+tscore2+tscore3));
+            Wrong.setText("Wrong: " + (15 -(tscore1+tscore2+tscore3)));
+            Scorewl.setText("You Lose!!" );
             }
         }
 
