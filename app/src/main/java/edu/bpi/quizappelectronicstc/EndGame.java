@@ -117,19 +117,15 @@ public class EndGame extends AppCompatActivity {
         String body = getString(R.string.email_body_part1) + "\n\n" +
                 getString(R.string.correct_label) + " " + finalCorrect + "\n" +
                 getString(R.string.wrong_label) + " " + finalWrong + "\n" +
-                getString(R.string.total_questions) + " " + totalQuestions + "\n" +
+                getString(R.string.total_questions) + " " + 15 + "\n" +
                 getString(R.string.percentage) + " " +
-                String.format("%.1f%%", (finalCorrect * 100.0 / totalQuestions));
+                String.format("%.1f%%", (finalCorrect * 100.0 / 15));
 
         Intent emailIntent = new Intent(Intent.ACTION_SEND);
         emailIntent.setType("message/rfc822");
         emailIntent.putExtra(Intent.EXTRA_SUBJECT, subject);
         emailIntent.putExtra(Intent.EXTRA_TEXT, body);
-
-        try {
-            startActivity(Intent.createChooser(emailIntent, getString(R.string.send_email)));
-        } catch (android.content.ActivityNotFoundException ex) {
-            // Handle case where no email app is available
-        }
+        startActivity(emailIntent);
+       //        startActivity(Intent.createChooser(emailIntent, getString(R.string.send_email)));
     }
 }

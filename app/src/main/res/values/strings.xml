@@ -51,4 +51,8 @@
     <string name="instructions">Answer True or False for each question. You need to get most questions right to advance!</string>
     <string name="ready_for_score">Ready to See Your Score?</string>
     <string name="click_here">-> Click Here &lt;-</string>
+    <string name="question_1">Question #1:</string>
+    <string name="question_here">Question here....</string>
+    <string name="hint">Hint</string>
+    <string name="bulb">bulb</string>
 </resources>

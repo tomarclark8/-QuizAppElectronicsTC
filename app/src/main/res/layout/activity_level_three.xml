@@ -30,13 +30,24 @@
 
 
     <Button
+        android:id="@+id/Hint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/hint"
+        android:textSize="18sp"
+        android:backgroundTint="#FF9800"
+        android:paddingVertical="16sp"
+        android:translationY="240dp"
+        />
+    <Button
         android:id="@+id/True"
         android:layout_width="match_parent"
         android:layout_height="143dp"
         android:text="True"
-        android:textSize="40dp"
+        android:textSize="40sp"
+        android:backgroundTint="#389200"
         android:translationX="0dp"
-        android:translationY="360dp" />
+        android:translationY="260dp" />
 
 
     <Button
@@ -44,17 +55,9 @@
         android:layout_width="match_parent"
         android:layout_height="143dp"
         android:text="False"
-        android:textSize="40dp"
+        android:textSize="40sp"
+        android:backgroundTint="#D00000"
         android:translationX="0dp"
-        android:translationY="380dp" />
-
-    <Button
-        android:id="@+id/Hint"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Hint"
-        android:textSize="18sp"
-        android:backgroundTint="#FF9800"
-        android:paddingVertical="16dp"/>
+        android:translationY="280dp" />
 
 </LinearLayout>

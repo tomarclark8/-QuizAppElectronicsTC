@@ -21,7 +21,7 @@ String[] questionsthree;
                 "This the schematic symbol of a bulb?",
                 "Conventional Current flows from Negative(-) to Positive(+)?",
                 "Ohm's Law is represented by the equation V=(I)(R)?",
-                "Make up something here lol"};
+                "Do Capacitors store energy in an electric field between plates?"};
         this.questionstwo = new String[]{
                 "Does a diode allow current to flow in both directions?",
                 "Is the unit of resistance called the Ohm?",

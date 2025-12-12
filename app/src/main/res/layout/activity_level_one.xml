@@ -11,8 +11,8 @@
 
     <TextView
         android:id="@+id/qnumindex1"
-        android:text="Question #1:"
-        android:textSize="30dp"
+        android:text="@string/question_1"
+        android:textSize="30sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:translationX="20dp"
@@ -23,20 +23,39 @@
         android:id="@+id/questions1"
         android:layout_width="379dp"
         android:layout_height="wrap_content"
-        android:text="Question here...."
-        android:textSize="30dp"
+        android:text="@string/question_here"
+        android:textSize="30sp"
         android:translationX="20dp"
         android:translationY="74dp" />
+    <ImageView
+        android:id="@+id/bulb"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/bulb"
+        app:srcCompat="@drawable/bulb"
+        android:translationY="140dp"/>
 
 
+    <Button
+        android:id="@+id/Hint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/hint"
+        android:textSize="18sp"
+        android:backgroundTint="#FF9800"
+        android:paddingVertical="16sp"
+        android:translationY="240dp"
+        />
     <Button
         android:id="@+id/True"
         android:layout_width="match_parent"
         android:layout_height="143dp"
         android:text="True"
-        android:textSize="40dp"
+        android:textSize="40sp"
+        android:backgroundTint="#389200"
         android:translationX="0dp"
-        android:translationY="360dp" />
+        android:translationY="260dp" />
 
 
     <Button
@@ -44,17 +63,13 @@
         android:layout_width="match_parent"
         android:layout_height="143dp"
         android:text="False"
-        android:textSize="40dp"
+        android:textSize="40sp"
+        android:backgroundTint="#D00000"
         android:translationX="0dp"
-        android:translationY="380dp" />
+        android:translationY="280dp" />
 
-    <Button
-        android:id="@+id/Hint"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Hint"
-        android:textSize="18sp"
-        android:backgroundTint="#FF9800"
-        android:paddingVertical="16dp"/>
+
+
+
 
 </LinearLayout>

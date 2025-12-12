@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,6 +23,7 @@ public class LvlOne extends AppCompatActivity {
     Button True;
     Button False;
     Button Hint;
+    ImageView Bulb;
     private int tscore1;
     private int currentQuestion;
     private int questionIndex = 1;
@@ -41,6 +43,11 @@ public class LvlOne extends AppCompatActivity {
         True = (Button) findViewById(R.id.True);
         False = (Button) findViewById(R.id.False);
         Hint = (Button) findViewById(R.id.Hint);
+        Bulb = (ImageView) findViewById(R.id.bulb);
+
+        // Sets 100% transparency
+        Bulb.setAlpha(0.0f);
+
         //Initial Question Start
         questions1.setText(questionArray[currentQuestion]);
 
@@ -89,6 +96,12 @@ public class LvlOne extends AppCompatActivity {
         currentQuestion++;
         questionIndex++;
 
+        if(questionIndex == 2){
+            Bulb.setAlpha(1.0f); // Sets 0% transparency
+        } else {
+            // Sets 100% transparency
+            Bulb.setAlpha(0.0f);
+        }
         // Check if there are more questions
         if(currentQuestion < questionArray.length) {
             // Display next question
