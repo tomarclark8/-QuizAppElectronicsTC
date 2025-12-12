@@ -100,7 +100,7 @@ public class LvlTwo extends AppCompatActivity {
         // Check if there are more questions
         if(currentQuestion < questionArray.length) {
             // Display next question
-            qnumindex2.setText(getString(R.string.question_number)+questionIndex);
+            qnumindex2.setText(getString(R.string.question_number)+(questionIndex+5));
             questions2.setText(questionArray[currentQuestion]);
         }else if(tscore2 >= questionArray.length-1){
             // All questions answered, go to transition screen

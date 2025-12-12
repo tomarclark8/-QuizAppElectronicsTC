@@ -90,7 +90,7 @@ public class LvlThree extends AppCompatActivity {
         // Check if there are more questions
         if(currentQuestion < questionArray.length) {
             // Display next question
-            qnumindex3.setText(getString(R.string.question_number)+questionIndex);
+            qnumindex3.setText(getString(R.string.question_number)+(questionIndex+10));
             questions3.setText(questionArray[currentQuestion]);
 
         }else if(tscore3 >= questionArray.length-1){
