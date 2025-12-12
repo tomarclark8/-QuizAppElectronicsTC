@@ -110,7 +110,7 @@ public class LvlThree extends AppCompatActivity {
     }
     private void endGame(){
         Intent intent = new Intent(LvlThree.this, EndGame.class);
-        intent.putExtra("score3", tscore3);
+        intent.putExtra("lvlIndicator", 3);
         intent.putExtra("score1", getIntent().getIntExtra("score1", 0));
         intent.putExtra("score2", getIntent().getIntExtra("score2", 0));
         intent.putExtra("score3", tscore3);
