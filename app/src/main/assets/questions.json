@@ -1,0 +1,98 @@
+{
+  "questionsone": [
+    {
+      "id": 1,
+      "prompt": "Is a red-red-blue-gold resistor nominal value greater than 45M-ohms?",
+      "answer": false,
+      "hint": "Red-Red-Blue means 22 followed by 6 zeros (22,000,000 ohms = 22M ohms)"
+    },
+    {
+      "id": 2,
+      "prompt": "This the schematic symbol of a bulb?",
+      "answer": true,
+      "hint": "A bulb symbol has a circle with an X or filament inside"
+    },
+    {
+      "id": 3,
+      "prompt": "Conventional Current flows from Negative(-) to Positive(+)?",
+      "answer": false,
+      "hint": "Conventional current flows from positive to negative terminal"
+    },
+    {
+      "id": 4,
+      "prompt": "Ohm's Law is represented by the equation V=(I)(R)?",
+      "answer": true,
+      "hint": "Ohm's Law: Voltage = Current × Resistance"
+    },
+    {
+      "id": 5,
+      "prompt": "Do Capacitors store energy in an electric field between plates?",
+      "answer": true,
+      "hint": "Capacitors store energy in an electric field between plates"
+    }
+  ],
+  "questionstwo": [
+    {
+      "id": 1,
+      "prompt": "Does a diode allow current to flow in both directions?",
+      "answer": false,
+      "hint": "Diodes are one-way gates for current flow"
+    },
+    {
+      "id": 2,
+      "prompt": "Is the unit of resistance called the Ohm?",
+      "answer": true,
+      "hint": "Resistance is measured in Ohms (Ω), named after Georg Ohm"
+    },
+    {
+      "id": 3,
+      "prompt": "In a series circuit, current is the same at all points?",
+      "answer": true,
+      "hint": "In series circuits, the same current flows through all components"
+    },
+    {
+      "id": 4,
+      "prompt": "Does an LED emit light when reverse biased?",
+      "answer": false,
+      "hint": "LEDs only emit light when forward biased (current flows forward)"
+    },
+    {
+      "id": 5,
+      "prompt": "Is a transistor a three-terminal device?",
+      "answer": true,
+      "hint": "Transistors have three terminals: base, collector, and emitter"
+    }
+  ],
+  "questionsthree": [
+    {
+      "id": 1,
+      "prompt": "Does a short circuit have infinite resistance?",
+      "answer": false,
+      "hint": "A short circuit has almost zero resistance (direct connection)"
+    },
+    {
+      "id": 2,
+      "prompt": "In parallel circuits, voltage is the same across all branches?",
+      "answer": true,
+      "hint": "Parallel circuits share the same voltage across all branches"
+    },
+    {
+      "id": 3,
+      "prompt": "Is AC current the same as DC current?",
+      "answer": false,
+      "hint": "AC alternates direction, DC flows in one direction only"
+    },
+    {
+      "id": 4,
+      "prompt": "Does a fuse protect a circuit by opening when current is too high?",
+      "answer": true,
+      "hint": "Fuses contain a wire that melts and breaks the circuit when overloaded"
+    },
+    {
+      "id": 5,
+      "prompt": "Is power measured in Watts?",
+      "answer": true,
+      "hint": "Power is measured in Watts (W), calculated as P = V × I"
+    }
+  ]
+}
