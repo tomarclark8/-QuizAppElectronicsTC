@@ -3,7 +3,7 @@
     {
       "id": 1,
       "prompt": "Is a red-red-blue-gold resistor nominal value greater than 45M-ohms?",
-      "answer": true,
+      "answer": false,
       "hint": "Red-Red-Blue means 22 followed by 6 zeros (22,000,000 ohms = 22M ohms)"
     },
     {
