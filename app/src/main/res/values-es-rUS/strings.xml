@@ -51,4 +51,5 @@
     <string name="instructions">Responde Verdadero o Falso para cada pregunta. ¡Necesitas acertar la mayoría de las preguntas para avanzar!</string>
     <string name="ready_for_score">¿Listo para Ver tu Puntuación?</string>
     <string name="click_here">-> Haz Clic Aquí &lt;-</string>
+    <string name="score_0_top_score_0">Score: 0 | Top Score: 0</string>
 </resources>
