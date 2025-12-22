@@ -27,14 +27,12 @@ TextView Level;
         Level = (TextView) findViewById(R.id.Level);
 
 
-
-
-
         Intent intent = getIntent();
         int lvlIndicator = intent.getIntExtra("lvlIndicator", 0);
         int tscore1 = intent.getIntExtra("score1", 0);
         int tscore2 = intent.getIntExtra("score2", 0);
         int tscore3 = intent.getIntExtra("score3", 0);
+        int scoreCounter = intent.getIntExtra("scoreCounter", 0);
 
         //Level 1 Indicator
         if(lvlIndicator == 1) {
@@ -74,6 +72,7 @@ TextView Level;
         nextIntent.putExtra("score2", tscore2);
         nextIntent.putExtra("score3", tscore3);
         nextIntent.putExtra("lvlIndicator", lvlIndicator);
+        nextIntent.putExtra("scoreCounter", scoreCounter);
 
         startActivity(nextIntent);
 

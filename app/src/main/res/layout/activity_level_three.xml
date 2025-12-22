@@ -10,6 +10,15 @@
     tools:context=".LvlThree">
 
     <TextView
+        android:id="@+id/scoreTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/score_0_top_score_0"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:translationX="110sp"
+        android:translationY="0sp"/>
+    <TextView
         android:id="@+id/qnumindex3"
         android:text="Question #11:"
         android:textSize="30dp"

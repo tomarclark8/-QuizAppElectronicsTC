@@ -13,6 +13,12 @@ import android.widget.Toast;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 
 public class LvlOne extends AppCompatActivity {
@@ -26,9 +32,9 @@ public class LvlOne extends AppCompatActivity {
     ImageView Bulb;
 
     private int tscore1;
-    private int currentQuestion;
+    private int currentQuestion = 0;
     private int questionIndex = 1;
-    private int scoreCounter = 0;  // Current score counter
+    private int scoreCounter = 0;
 
     // SharedPreferences
     private SharedPreferences mPreferences;
@@ -36,10 +42,8 @@ public class LvlOne extends AppCompatActivity {
     private final String TOP_SCORE_KEY = "TOP_SCORE";
     private final String USER_NAME_KEY = "USER_NAME";
 
-    Questions questions = new Questions();
-    String[] questionArray = questions.getlvlOneQuestions();
-    ArrayList<Boolean> answersArray = questions.getlvlOneAnswer();
-    String[] hintsArray = questions.getlvlOneHints();
+    // Questions loaded from JSON
+    private ArrayList<Question> questionsList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,20 +53,29 @@ public class LvlOne extends AppCompatActivity {
 
         qnumindex1 = (TextView) findViewById(R.id.qnumindex1);
         questions1 = (TextView) findViewById(R.id.questions1);
-        scoreTextView = (TextView) findViewById(R.id.scoreTextView);  // Add this to your layout
+        scoreTextView = (TextView) findViewById(R.id.scoreTextView);
         True = (Button) findViewById(R.id.True);
         False = (Button) findViewById(R.id.False);
         Hint = (Button) findViewById(R.id.Hint);
         Bulb = (ImageView) findViewById(R.id.bulb);
 
+        scoreCounter = getIntent().getIntExtra("scoreCounter", 0);
+
         // Initialize SharedPreferences
+        String sharedPrefFile = "edu.bpi.quizappelectronicstc";
         mPreferences = getSharedPreferences(sharedPrefFile, MODE_PRIVATE);
+
+        // Load questions from JSON
+        questionsList = new ArrayList<>();
+        loadQuestionsFromJSON();
 
         // Sets 100% transparency
         Bulb.setAlpha(0.0f);
 
         // Initial Question Start
-        questions1.setText(questionArray[currentQuestion]);
+        if (questionsList.size() > 0) {
+            questions1.setText(questionsList.get(currentQuestion).getPrompt());
+        }
 
         // Display initial score
         updateScoreDisplay();
@@ -90,10 +103,47 @@ public class LvlOne extends AppCompatActivity {
         });
     }
 
+    private void loadQuestionsFromJSON() {
+        try {
+            // Read JSON file from assets folder
+            InputStream is = getAssets().open("questions.json");
+            int size = is.available();
+            byte[] buffer = new byte[size];
+            is.read(buffer);
+            is.close();
+
+            String json = new String(buffer, "UTF-8");
+
+            // Instantiation of JSON
+            JSONObject jsonObject = new JSONObject(json);
+            JSONArray questionsArray = jsonObject.getJSONArray("questionsone");
+
+            // Load questions into ArrayList
+            for (int i = 0; i < questionsArray.length(); i++) {
+                JSONObject questionObj = questionsArray.getJSONObject(i);
+
+                int id = questionObj.getInt("id");
+                String prompt = questionObj.getString("prompt");
+                boolean answer = questionObj.getBoolean("answer");
+                String hint = questionObj.getString("hint");
+
+                Question question = new Question(id, prompt, answer, hint);
+                questionsList.add(question);
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            Toast.makeText(this, "Error loading questions", Toast.LENGTH_SHORT).show();
+        } catch (JSONException e) {
+            e.printStackTrace();
+            Toast.makeText(this, "Error parsing questions", Toast.LENGTH_SHORT).show();
+        }
+    }
+
     private void showHint() {
         Intent intent = new Intent(LvlOne.this, ViewHintActivity.class);
-        intent.putExtra("hint", hintsArray[currentQuestion]);
-        intent.putExtra("answer", answersArray.get(currentQuestion));
+        intent.putExtra("hint", questionsList.get(currentQuestion).getHint());
+        intent.putExtra("answer", questionsList.get(currentQuestion).getAnswer());
         startActivity(intent);
     }
 
@@ -102,7 +152,7 @@ public class LvlOne extends AppCompatActivity {
         hideButtons();
 
         // Get the correct answer for current question
-        boolean correctAnswer = answersArray.get(currentQuestion);
+        boolean correctAnswer = questionsList.get(currentQuestion).getAnswer();
 
         // Check if user's answer is correct
         if(userAnswer == correctAnswer) {
@@ -163,15 +213,15 @@ public class LvlOne extends AppCompatActivity {
         }
 
         // Check if there are more questions
-        if(currentQuestion < questionArray.length) {
+        if(currentQuestion < questionsList.size()) {
             // Display next question
             qnumindex1.setText(getString(R.string.question_number) + questionIndex);
-            questions1.setText(questionArray[currentQuestion]);
+            questions1.setText(questionsList.get(currentQuestion).getPrompt());
 
             // Show buttons again for next question
             showButtons();
 
-        } else if(tscore1 >= questionArray.length - 1){
+        } else if(tscore1 >= questionsList.size() - 1){
             // All questions answered, go to transition screen
             finishLevel();
         } else {
@@ -201,7 +251,8 @@ public class LvlOne extends AppCompatActivity {
     private void finishLevel(){
         Intent intent = new Intent(LvlOne.this, TransitionScreen.class);
         intent.putExtra("score1", tscore1);
-        intent.putExtra("lvlIndicator", 2);
+        intent.putExtra("scoreCounter", scoreCounter);
+        intent.putExtra("lvlIndicator",2);
         startActivity(intent);
     }
 

@@ -9,7 +9,15 @@
     android:layout_height="match_parent"
     tools:context=".LvlTwo">
 
-
+    <TextView
+        android:id="@+id/scoreTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/score_0_top_score_0"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:translationX="110sp"
+        android:translationY="0sp"/>
     <TextView
         android:id="@+id/qnumindex2"
         android:text="Question #6:"
