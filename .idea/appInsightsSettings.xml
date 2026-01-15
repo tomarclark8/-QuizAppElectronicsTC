@@ -9,10 +9,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="PLACEHOLDER" />
-                  <option name="mobileSdkAppId" value="" />
-                  <option name="projectId" value="" />
-                  <option name="projectNumber" value="" />
+                  <option name="appId" value="edu.bpi.quizappelectronicstc" />
+                  <option name="mobileSdkAppId" value="1:432042831445:android:90b0f80ade3f50ae2a6edc" />
+                  <option name="projectId" value="device-streaming-ba388572" />
+                  <option name="projectNumber" value="432042831445" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />
