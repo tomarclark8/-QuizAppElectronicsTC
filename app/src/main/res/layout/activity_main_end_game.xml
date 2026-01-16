@@ -60,4 +60,30 @@
         android:backgroundTint="#1976D2"
         android:paddingVertical="16dp"
         android:translationY="50dp"/>
+
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SENT TO FB"
+        android:textSize="20sp"
+        android:id="@+id/sendBTN"
+        android:translationY="200sp"/>
+
+    <Button
+        android:id="@+id/retrieveBTN"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="RETRIEVE FROM FB"
+        android:textSize="20sp"
+        android:translationY="200sp"/>
+
+    <TextView
+        android:id="@+id/fbTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Data not yet received from Firebase"
+        android:textSize="20sp"
+        android:translationY="200sp"/>
 </LinearLayout>
