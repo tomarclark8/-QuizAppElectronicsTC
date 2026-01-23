@@ -44,7 +44,7 @@
 
     <!-- Email -->
     <string name="email_subject">My Electronics Quiz Score</string>
-    <string name="email_body_part1">Here are my quiz results:</string>
+    <string name="email_body_part1">Here are your quiz results:</string>
     <string name="send_email">Send Email</string>
 
     <!-- Instructions -->

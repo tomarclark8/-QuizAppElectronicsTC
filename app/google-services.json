@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "432042831445",
+    "firebase_url": "https://device-streaming-ba388572-default-rtdb.firebaseio.com",
+    "project_id": "device-streaming-ba388572",
+    "storage_bucket": "device-streaming-ba388572.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:432042831445:android:90b0f80ade3f50ae2a6edc",
+        "android_client_info": {
+          "package_name": "edu.bpi.quizappelectronicstc"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC1MHOZWP_3f99UTK2cFAYoVSAuvE_fT-w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

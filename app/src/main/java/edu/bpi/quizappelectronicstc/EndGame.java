@@ -2,12 +2,24 @@ package edu.bpi.quizappelectronicstc;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class EndGame extends AppCompatActivity {
 
@@ -24,6 +36,14 @@ public class EndGame extends AppCompatActivity {
     private int totalQuestions;
 
 
+    //////FireBase Stuff idk
+    Button sendBTN, retrieveBTN;
+    TextView msgFromFBTV;
+    String message;
+    final String TAG = "Sup? : ";
+    FirebaseDatabase database;
+    DatabaseReference myRef;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +58,13 @@ public class EndGame extends AppCompatActivity {
         Scorewl = (TextView) findViewById(R.id.scorewl);
         Again = (Button) findViewById(R.id.Again);
         EmailScore = findViewById(R.id.EmailScore);
-
+        ///////FireBase Stuff IDk
+        sendBTN = findViewById(R.id.sendBTN);
+        retrieveBTN = findViewById(R.id.retrieveBTN);
+        msgFromFBTV = findViewById(R.id.fbTV);
+        message = "";
+        database = FirebaseDatabase.getInstance();
+        myRef = database.getReference("message");
 
 
 
@@ -47,9 +73,6 @@ public class EndGame extends AppCompatActivity {
         int tscore2 = intent.getIntExtra("score2", 0);
         int tscore3 = intent.getIntExtra("score3", 0);
         int lvlIndicator = intent.getIntExtra("lvlIndicator", 1);
-
-
-
 
         if(lvlIndicator < 4){
             if (lvlIndicator == 1) {
@@ -92,9 +115,13 @@ public class EndGame extends AppCompatActivity {
 
             }
         }
+        //////Different way I found how to do
+        EndGame msgET = new EndGame();
+        database = FirebaseDatabase.getInstance();
+        myRef = database.getReference("message");
 
 
-
+        //Buttons
         Again.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -103,16 +130,41 @@ public class EndGame extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
         EmailScore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 sendScoreEmail();
             }
         });
+        ///////FireBase Buttons
+        sendBTN.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                myRef.setValue(UserScore());
+            }
+        });
+
+        retrieveBTN.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                myRef.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        String val = snapshot.getValue(String.class);
+                        msgFromFBTV.setText(val);
+                        Log.w(TAG, "Successfully read value.");
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+                        Log.w(TAG, "Failed to read value.", error.toException());
+                    }
+                });
+            }
+        });
     }
 
-    private void sendScoreEmail() {
+    public void sendScoreEmail() {
         String subject = getString(R.string.email_subject);
         String body = getString(R.string.email_body_part1) + "\n\n" +
                 getString(R.string.correct_label) + " " + finalCorrect + "\n" +
@@ -127,5 +179,17 @@ public class EndGame extends AppCompatActivity {
         emailIntent.putExtra(Intent.EXTRA_TEXT, body);
         startActivity(emailIntent);
        //        startActivity(Intent.createChooser(emailIntent, getString(R.string.send_email)));
+    }
+
+    public String UserScore(){
+        String subject = getString(R.string.email_subject);
+        String body = getString(R.string.email_body_part1) + "\n\n" +
+                getString(R.string.correct_label) + " " + finalCorrect + "\n" +
+                getString(R.string.wrong_label) + " " + finalWrong + "\n" +
+                getString(R.string.total_questions) + " " + 15 + "\n" +
+                getString(R.string.percentage) + " " +
+                String.format("%.1f%%", (finalCorrect * 100.0 / 15));
+        String UserScore = subject + ": " + body;
+        return UserScore;
     }
 }

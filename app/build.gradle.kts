@@ -1,4 +1,7 @@
 plugins {
+    //Dont use Copy from Firebase, use this version VVV
+    alias(libs.plugins.google.gms.google.services)
+    //.....
     alias(libs.plugins.android.application)
 }
 
@@ -40,10 +43,16 @@ android {
 
 dependencies {
 
+
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.activity)
     implementation(libs.constraintlayout)
+    implementation(libs.firebase.database)
+    implementation(libs.firebase.auth)
+    implementation(libs.credentials)
+    implementation(libs.credentials.play.services.auth)
+    implementation(libs.googleid)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
